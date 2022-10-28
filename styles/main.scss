@@ -1,1 +1,19 @@
+@font-face {
+  font-family: eina;
+  src: url(../public/fonts/eina/Eina02-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: eina;
+  src: url(../public/fonts/eina/Eina02-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+$body-bg: #f7f7f7;
+
 @import "~bootstrap/scss/bootstrap";
