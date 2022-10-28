@@ -1,0 +1,11 @@
+default.conf.template
+docker-compose.yml
+Dockerfile
+.dockerignore
+README.md
+.gitignore
+yarn-error.log*
+/.next
+/.git
+/.node_modules
+/terraform

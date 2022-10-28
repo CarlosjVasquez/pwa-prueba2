@@ -1,0 +1,36 @@
+services:
+  nginx:
+    image: nginx:alpine
+    environment:
+      - DOMAIN
+      - TZ=America/Guayaquil
+    depends_on:
+      - web
+    volumes:
+      - ./config:/etc/nginx/templates:ro
+      - ./logs:/var/log/nginx
+      - letsencrypt:/etc/letsencrypt/:ro
+    ports:
+      - 80:80
+      - 443:443
+    restart: unless-stopped
+  certbot:
+    image: certbot/dns-digitalocean
+    command: >-
+      certonly 
+      --dns-digitalocean 
+      --dns-digitalocean-credentials /root/.secrets/certbot/digitalocean 
+      --email ${EMAIL} --agree-tos --no-eff-email
+      -d ${DOMAIN}
+    volumes:
+      - letsencrypt:/etc/letsencrypt
+      - ~/.secrets:/root/.secrets/certbot
+  web:
+    build: .
+    ports:
+      - 8069:3500
+    environment:
+      - TZ=America/Guayaquil
+    restart: unless-stopped
+volumes:
+  letsencrypt:
