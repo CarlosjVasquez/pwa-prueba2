@@ -27,6 +27,8 @@ services:
       - ~/.secrets:/root/.secrets/certbot
   web:
     build: .
+    ports:
+      - :3500
     environment:
       - TZ=America/Guayaquil
     restart: unless-stopped
