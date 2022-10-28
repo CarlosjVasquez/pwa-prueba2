@@ -21,6 +21,7 @@ FROM node:alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
+ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
@@ -34,6 +35,5 @@ USER nextjs
 EXPOSE 3500
 
 ENV PORT 3500
-ENV NEXT_TELEMETRY_DISABLED 1
 
 CMD ["node", "server.js"]
