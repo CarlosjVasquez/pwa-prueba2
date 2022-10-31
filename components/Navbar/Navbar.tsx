@@ -9,13 +9,7 @@ const Navbar: React.FunctionComponent = () => {
     <S.Navbar collapseOnSelect expand="lg" fixed="top">
       <Container>
         <BSNavbar.Brand href="#home">
-          <Image
-            src="/icons/difierelo-512x512.svg"
-            width="150"
-            height="40"
-            className="d-inline-block align-top"
-            alt="Difierelo"
-          />
+          <S.ImgNav className="d-inline-block align-top" />
         </BSNavbar.Brand>
         <BSNavbar.Toggle aria-controls="navbarScroll" />
         <S.Collapse>

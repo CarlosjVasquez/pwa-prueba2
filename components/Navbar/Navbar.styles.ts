@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import BSNavbar from "react-bootstrap/Navbar";
+import imageNav from "../../public/icons/difierelo-512x512.svg";
 
 export const Navbar = styled(BSNavbar)`
   background-color: #f7f7f7;
@@ -43,6 +44,13 @@ export const BtnSuccess = styled.button`
   letter-spacing: -0.02em;
   color: #ffffff;
   float: left;
+
+  :hover {
+    background: #4544ed;
+    color: #ffffff;
+    box-shadow: 0 4px 16px #4544ed;
+    transition: all 0.2s ease;
+  }
 `;
 
 export const BtnLight = styled.button`
@@ -65,4 +73,23 @@ export const BtnLight = styled.button`
   letter-spacing: -0.02em;
   color: #4544ed;
   border-color: #4544ed;
+
+  :hover {
+    background: #f8f8f4;
+    color: #4544ed;
+    border-color: #4544ed;
+    box-shadow: 0 4px 16px #4544ed;
+    transition: all 0.2s ease;
+  }
+`;
+
+export const ImgNav = styled.div`
+  background: url(${imageNav.src});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 152px;
+  height: 41px;
+  left: 46px;
+  top: 41px;
 `;
