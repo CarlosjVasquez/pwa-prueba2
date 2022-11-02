@@ -17,3 +17,8 @@
 $body-bg: #f7f7f7;
 
 @import "~bootstrap/scss/bootstrap";
+
+h1,
+p {
+  margin-bottom: 0;
+}

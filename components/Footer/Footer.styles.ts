@@ -2,10 +2,11 @@ import styled from "styled-components";
 import imageFooter from "../../public/icons/difierelo-384x384.svg";
 import iconFacebook from "../../public/icons/facebook.svg";
 import iconInstagram from "../../public/icons/instagram.svg";
+import BSContainer from "react-bootstrap/Container";
 
-export const Footer = styled.div`
+export const Footer = styled.footer`
+  position: absolute;
   width: 100%;
-  bottom: 0;
 
   h6 {
     color: #11171d;
@@ -43,6 +44,11 @@ export const Footer = styled.div`
     color: #dedede !important;
   }
 `;
+
+export const NavContainer = styled(BSContainer)`
+  padding-top: 5.94vw;
+  padding-bottom: 4.83vw;
+`
 
 export const ImgNav = styled.div`
   background: url(${imageFooter.src});
