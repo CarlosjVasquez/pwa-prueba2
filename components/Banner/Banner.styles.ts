@@ -1,27 +1,54 @@
 import styled from "styled-components";
 import myImage from "../../public/banner-bg.png";
 import Container from "react-bootstrap/Container";
+import Responsive from "../../utils/style/Responsive";
+import BSCol from "react-bootstrap/Col";
+
+export const Col = styled(BSCol)`
+  &.col-md-6 {
+    width: 59%;
+
+    ${Responsive.SM} {
+      width: 50%;
+    }
+  }
+`;
 
 export const TextContainer = styled(Container)`
+  font-family: eina;
   padding-left: 5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 35.45vw;
+  min-height: 49vw;
+  z-index: 1;
 
+  ${Responsive.SM} {
+    width: 100%;
+    min-height: 80vw;
+    left: 41%;
+  }
+  
   h1 {
-    font-size: 62px;
+    font-size: 6.19vw;
     line-height: 1em;
     color: #11171d;
     font-weight: bold;
-    font-family: eina;
+    
+    ${Responsive.SM} {
+      font-size: 9.1vw;
+    }
   }
-
+  
   p {
-    font-size: 17px;
-    line-height: bold;
+    font-size: 1.6vw;
     color: #11171d;
-    margin-top: 3.6vh;
+    margin-top: 1vw;
+    
+    ${Responsive.SM} {
+      font-size: 3.9vw;
+      margin-top: 3vw;
+    }
 
     .highlight {
       color: #4544ed;
@@ -35,8 +62,14 @@ export const ImgBg = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  width: 50%;
-  min-height: 36.45vw;
+  width: 56.52%;
+  min-height: 49vw;
   position: absolute;
   right: 0;
+
+  ${Responsive.SM} {
+    width: 100%;
+    min-height: 80vw;
+    left: 41%;
+  }
 `;
