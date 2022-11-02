@@ -1,14 +1,10 @@
 import Navbar from "../components/Navbar";
 import styled from "styled-components";
 import Banner from "../components/Banner";
+import Footer from "../components/Footer";
 
 const Container = styled.div`
   margin-top: 90px;
-`;
-
-const Footer = styled.footer`
-  position: absolute;
-  bottom: 0;
 `;
 
 export default function Home() {
@@ -18,9 +14,7 @@ export default function Home() {
       <Container>
         <Banner />
       </Container>
-      <Footer className="py-3 text-white text-center w-100 bg-dark">
-        <p>A PWA Web App built on Next.js</p>
-      </Footer>
+      <Footer />
     </div>
   );
 }
