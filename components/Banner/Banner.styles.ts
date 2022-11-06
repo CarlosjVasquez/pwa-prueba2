@@ -28,23 +28,23 @@ export const TextContainer = styled(Container)`
     min-height: 80vw;
     left: 41%;
   }
-  
+
   h1 {
     font-size: 6.19vw;
     line-height: 1em;
     color: #11171d;
     font-weight: bold;
-    
+
     ${Responsive.SM} {
       font-size: 9.1vw;
     }
   }
-  
+
   p {
     font-size: 1.6vw;
     color: #11171d;
     margin-top: 1vw;
-    
+
     ${Responsive.SM} {
       font-size: 3.9vw;
       margin-top: 3vw;

@@ -3,6 +3,7 @@ import imageFooter from "../../public/icons/difierelo-384x384.svg";
 import iconFacebook from "../../public/icons/facebook.svg";
 import iconInstagram from "../../public/icons/instagram.svg";
 import BSContainer from "react-bootstrap/Container";
+import Responsive from "../../utils/style/Responsive";
 
 export const Footer = styled.footer`
   position: absolute;
@@ -10,7 +11,7 @@ export const Footer = styled.footer`
 
   h6 {
     color: #11171d;
-    font-family: Eina 02;
+    font-family: eina;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -19,7 +20,7 @@ export const Footer = styled.footer`
 
   p {
     color: #11171d;
-    font-family: Eina 02;
+    font-family: eina;
     font-style: normal;
     font-weight: 100;
     font-size: 16px;
@@ -38,6 +39,10 @@ export const Footer = styled.footer`
     border-left-width: 0px;
     border-right-width: 0px;
     border-bottom-width: 0px;
+
+    ${Responsive.SM} {
+      font-size: 2.5vw;
+    }
   }
 
   .separador {
@@ -48,7 +53,11 @@ export const Footer = styled.footer`
 export const NavContainer = styled(BSContainer)`
   padding-top: 5.94vw;
   padding-bottom: 4.83vw;
-`
+
+  ${Responsive.SM} {
+    padding-top: 0vw;
+  }
+`;
 
 export const ImgNav = styled.div`
   background: url(${imageFooter.src});
@@ -62,7 +71,7 @@ export const ImgNav = styled.div`
 `;
 
 export const txtFollow = styled.p`
-  font-family: Eina 02;
+  font-family: eina;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;

@@ -11,7 +11,7 @@ export const Navbar = styled(BSNavbar)`
     color: #11171d;
     font-size: 14px;
     font-weight: 600;
-    font-family: Eina 02;
+    font-family: eina;
     padding-top: 3.5vh;
     font-style: normal;
     line-height: 19px;
@@ -35,7 +35,7 @@ export const BtnSuccess = styled.button`
   height: 55px;
   background: #4544ed;
   border-radius: 8px;
-  font-family: Eina 02;
+  font-family: eina;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -64,7 +64,7 @@ export const BtnLight = styled.button`
   height: 55px;
   background: #f8f8f4;
   border-radius: 8px;
-  font-family: Eina 02;
+  font-family: eina;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
