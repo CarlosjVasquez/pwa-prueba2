@@ -28,7 +28,7 @@ const Business: React.FunctionComponent = () => {
       className="d-flex flex-column justify-content-center m-0"
     >
       <BSRow className="m-0">
-        <BSCol>
+        <BSCol className="p-0">
           <h2>Negocios asociados</h2>
         </BSCol>
       </BSRow>
