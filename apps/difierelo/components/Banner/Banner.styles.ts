@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import myImage from "../../public/banner-bg.png";
-import Container from "react-bootstrap/Container";
-import Responsive from "../../utils/style/Responsive";
-import BSCol from "react-bootstrap/Col";
+import styled from 'styled-components';
+import myImage from '../../public/img/banner-bg.png';
+import Container from 'react-bootstrap/Container';
+import Responsive from '../../utils/style/Responsive';
+import BSCol from 'react-bootstrap/Col';
 
 export const Col = styled(BSCol)`
   &.col-md-6 {

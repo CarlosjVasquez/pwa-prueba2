@@ -1,5 +1,5 @@
-import Row from "react-bootstrap/Row";
-import * as S from "./Banner.styles";
+import Row from 'react-bootstrap/Row';
+import * as S from './Banner.styles';
 
 const Banner: React.FunctionComponent = () => {
   return (
