@@ -1,12 +1,12 @@
-import styled from "styled-components";
-import Container from "react-bootstrap/Container";
-import Responsive from "../../utils/style/Responsive";
-import BSCol from "react-bootstrap/Col";
-import BSCard from "react-bootstrap/Card";
+import styled from 'styled-components';
+import Container from 'react-bootstrap/Container';
+import Responsive from '../../utils/style/Responsive';
+import BSCol from 'react-bootstrap/Col';
+import BSCard from 'react-bootstrap/Card';
 
 export const Col = styled(BSCol)`
   &.col-md-6 {
-    width: 59%;
+    width: 50%;
 
     ${Responsive.SM} {
       width: 50%;
@@ -88,7 +88,7 @@ export const CardImgInfo1 = styled(BSCard.Img)`
     width: 30%;
     height: 5vw;
     min-height: 10vw;
-    top: 345vw;
+    top: 200vw;
     left: 9vw;
   }
 `;
@@ -110,7 +110,7 @@ export const CardImgInfo2 = styled(BSCard.Img)`
     width: 30%;
     height: 5vw;
     min-height: 10vw;
-    top: 360vw;
+    top: 215vw;
     left: 2vw;
   }
 `;
@@ -132,7 +132,7 @@ export const CardImgInfo3 = styled(BSCard.Img)`
     width: 30%;
     height: 5vw;
     min-height: 10vw;
-    top: 354vw;
+    top: 205vw;
     right: 6vw;
   }
 `;
@@ -154,7 +154,7 @@ export const CardImgInfo4 = styled(BSCard.Img)`
     width: 30%;
     height: 5vw;
     min-height: 10vw;
-    top: 368vw;
+    top: 220vw;
     right: 1vw;
   }
 `;

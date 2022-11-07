@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import Container from "react-bootstrap/Container";
-import Responsive from "../../utils/style/Responsive";
-import BSCol from "react-bootstrap/Col";
-import BSCard from "react-bootstrap/Card";
+import styled from 'styled-components';
+import Container from 'react-bootstrap/Container';
+import Responsive from '../../utils/style/Responsive';
+import BSCol from 'react-bootstrap/Col';
+import BSCard from 'react-bootstrap/Card';
 
 export const Col = styled(BSCol)`
   &.col-md-6 {
@@ -103,7 +103,7 @@ export const CardImgInfo1 = styled(BSCard.Img)`
   background-repeat: no-repeat;
   width: 60px;
   height: 370px;
-  top: 2360px;
+  top: 2405px;
   left: 140px;
   position: absolute;
   align-items: center;
@@ -113,7 +113,7 @@ export const CardImgInfo1 = styled(BSCard.Img)`
     width: 25px;
     height: 30vw;
     min-height: 30vw;
-    top: 412vw;
+    top: 263.5vw;
     left: 15vw;
   }
 `;
