@@ -1,17 +1,17 @@
-const sizes = {
-  phone: "576px",
-  tablet: "768px",
-  smallLaptop: "998px",
-  laptop: "1200px",
-  desktop: "1440px",
+export const sizes = {
+  phone: 576,
+  tablet: 768,
+  smallLaptop: 998,
+  laptop: 1200,
+  desktop: 1440,
 };
 
 const Responsive = {
-  SM: `@media(max-width: ${sizes.phone})`,
-  MD: `@media(max-width: ${sizes.tablet})`,
-  LG: `@media(max-width: ${sizes.smallLaptop})`,
-  XL: `@media(max-width: ${sizes.laptop})`,
-  XXL: `@media(max-width: ${sizes.desktop})`,
+  SM: `@media(max-width: ${sizes.phone}px)`,
+  MD: `@media(max-width: ${sizes.tablet}px)`,
+  LG: `@media(max-width: ${sizes.smallLaptop}px)`,
+  XL: `@media(max-width: ${sizes.laptop}px)`,
+  XXL: `@media(max-width: ${sizes.desktop}px)`,
 };
 
 export default Responsive;

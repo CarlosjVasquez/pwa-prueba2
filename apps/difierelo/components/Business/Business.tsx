@@ -4,8 +4,24 @@ import * as S from './Business.styles';
 import BusinessItem from './components/BusinessItem';
 import { Swiper, SwiperSlide as Slide } from 'swiper/react';
 import { Pagination } from 'swiper';
+import { sizes } from '../../utils/style/Responsive';
 
 const Business: React.FunctionComponent = () => {
+  const swiperBreakpoints = {};
+
+  swiperBreakpoints[sizes.phone] = {
+    slidesPerView: 1,
+    spaceBetween: 10,
+  };
+  swiperBreakpoints[sizes.tablet] = {
+    slidesPerView: 2,
+    spaceBetween: 20,
+  };
+  swiperBreakpoints[sizes.laptop] = {
+    slidesPerView: 3,
+    spaceBetween: 30,
+  };
+
   return (
     <S.Container
       fluid
@@ -18,25 +34,12 @@ const Business: React.FunctionComponent = () => {
       </BSRow>
       <S.ListContainer className="m-0">
         <Swiper
-          slidesPerView={3}
+          slidesPerView={1}
           spaceBetween={10}
           pagination={{
             clickable: true,
           }}
-          breakpoints={{
-            576: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 40,
-            },
-            1200: {
-              slidesPerView: 3,
-              spaceBetween: 50,
-            },
-          }}
+          breakpoints={swiperBreakpoints}
           modules={[Pagination]}
         >
           <Slide>
