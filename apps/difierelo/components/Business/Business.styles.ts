@@ -1,7 +1,8 @@
-import styled from "styled-components";
-import BSContainer from "react-bootstrap/Container";
-import BSRow from "react-bootstrap/Row";
-import BSCol from "react-bootstrap/Col";
+import styled from 'styled-components';
+import BSContainer from 'react-bootstrap/Container';
+import BSRow from 'react-bootstrap/Row';
+import BSCol from 'react-bootstrap/Col';
+import Responsive from '../../utils/style/Responsive';
 
 export const Container = styled(BSContainer)`
   background-color: #f7f7f7;
@@ -13,6 +14,10 @@ export const Container = styled(BSContainer)`
     font-family: eina;
     font-size: 3.31vw;
     font-weight: bold;
+
+    ${Responsive.SM} {
+      font-size: 6vw;
+    }
   }
 `;
 
