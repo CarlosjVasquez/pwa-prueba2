@@ -1,15 +1,15 @@
-import Row from "react-bootstrap/Row";
-import * as S from "./BannerTwo.styles";
+import Row from 'react-bootstrap/Row';
+import * as S from './BannerTwo.styles';
 
 const BannerTwo: React.FunctionComponent = () => {
   return (
     <section className="d-flex">
       <S.TextContainer fluid>
         <Row className="mx-0">
-          <S.Col md="12">
+          <S.Col className="p-0" md="12">
             <h1>No pagarás nada por</h1>
-            <h1 style={{ color: "#4544ed !important" }}>
-              adelantado <img src="../img/Group 85.png" />{" "}
+            <h1 style={{ color: '#4544ed !important' }}>
+              adelantado <img src="../img/Group 85.png" />{' '}
             </h1>
             <p>
               Paga semanal, quincenal o mensualmente <br />
