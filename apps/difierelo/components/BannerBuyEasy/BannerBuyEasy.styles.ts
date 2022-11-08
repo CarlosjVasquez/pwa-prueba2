@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import Container from "react-bootstrap/Container";
-import Responsive from "../../utils/style/Responsive";
-import BSCol from "react-bootstrap/Col";
-import BSCard from "react-bootstrap/Card";
+import styled from 'styled-components';
+import Container from 'react-bootstrap/Container';
+import Responsive from '../../utils/style/Responsive';
+import BSCol from 'react-bootstrap/Col';
+import BSCard from 'react-bootstrap/Card';
 
 export const Col = styled(BSCol)`
   &.col-md-6 {
@@ -19,12 +19,11 @@ export const Col = styled(BSCol)`
 export const TextContainer = styled(Container)`
   font-family: eina;
   background-color: #f7f7f7;
-  padding-top: 10vw;
+  padding-top: 2vw;
 
   ${Responsive.SM} {
     width: 100%;
     min-height: 80vw;
-    padding-top: 0vw;
   }
 
   h1 {
@@ -108,13 +107,13 @@ export const CardImg = styled(BSCard.Img)`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
+  width: 54.49vw;
   min-height: 35vw;
   align-items: center;
   align-content: center;
 
   ${Responsive.SM} {
-    width: 100%;
+    width: 54.49vw;
     min-height: 45vw;
   }
 `;

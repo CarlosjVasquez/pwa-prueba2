@@ -17,7 +17,7 @@ export const Col = styled(BSCol)`
 export const TextContainer = styled(Container)`
   font-family: eina;
   background-color: #f7f7f7;
-  padding-top: 10vw;
+  padding-top: 2vw;
 
   ${Responsive.SM} {
     width: 100%;
@@ -26,8 +26,8 @@ export const TextContainer = styled(Container)`
 
   h1 {
     font-style: normal;
-    font-size: 54px;
-    line-height: 1.5em;
+    font-size: 3.61vw;
+    line-height: 1.2em;
     color: #11171d;
     font-weight: 700;
     text-align: justify;
@@ -36,7 +36,7 @@ export const TextContainer = styled(Container)`
     margin-top: 6%;
 
     ${Responsive.SM} {
-      font-size: 4.4vw;
+      font-size: 3.4vw;
       margin-top: 5%;
       margin-inline-start: 20%;
     }
@@ -45,12 +45,12 @@ export const TextContainer = styled(Container)`
   p {
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 0.98vw;
+    line-height: 1.2em;
     color: #11171d;
     margin-top: 1vw;
     text-align: justify;
-    margin-inline-start: 35%;
+    margin-inline-start: 15.28vw;
 
     ${Responsive.SM} {
       /* font-size: 2.2vw;
@@ -63,19 +63,19 @@ export const TextContainer = styled(Container)`
 
   h4 {
     font-style: normal;
-    font-size: 32px;
-    line-height: 44px;
+    font-size: 2.22vw;
+    line-height: 1.2em;
     color: #11171d;
     font-weight: 700;
     text-align: justify;
     letter-spacing: -0.02em;
-    margin-inline-start: 35%;
-    margin-top: 8%;
+    margin-inline-start: 15.28vw;
+    margin-top: 4.31vw;
 
     ${Responsive.SM} {
-      font-size: 2.5vw;
-      margin-top: 3%;
-      margin-inline-start: 45%;
+      font-size: 2.8vw;
+      margin-top: 4vw;
+      margin-inline-start: 18vw;
     }
   }
 `;
@@ -85,7 +85,7 @@ export const CardImg = styled(BSCard.Img)`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
+  width: 48vw;
   min-height: 50vw;
   align-items: center;
   align-content: center;
@@ -101,55 +101,54 @@ export const CardImgInfo1 = styled(BSCard.Img)`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 60px;
-  height: 370px;
-  top: 2405px;
-  left: 140px;
+  width: 4.16vw;
+  height: 26.88vw;
+  top: 171vw;
+  left: 10.33vw;
   position: absolute;
   align-items: center;
   align-content: center;
 
   ${Responsive.SM} {
-    width: 25px;
-    height: 30vw;
+    width: 4.16vw;
     min-height: 30vw;
-    top: 263.5vw;
+    top: 285vw;
     left: 15vw;
   }
 `;
 
 export const TitleTwo = styled.h5`
   font-style: normal;
-  font-size: 32px;
-  line-height: 44px;
+  font-size: 2.22vw;
+  line-height: 1.2em;
   color: #11171d;
   font-weight: 700;
   text-align: justify;
   letter-spacing: -0.02em;
-  margin-inline-start: 35%;
-  margin-top: 6%;
+  margin-inline-start: 15.28vw;
+  margin-top: 4.31vw;
 
   ${Responsive.SM} {
-    font-size: 2.5vw;
-    margin-top: 8%;
-    margin-inline-start: 45%;
+    font-size: 2.8vw;
+    margin-top: 11vw;
+    margin-inline-start: 18vw;
   }
 `;
 
 export const TitleThree = styled.h6`
   font-style: normal;
-  font-size: 32px;
-  line-height: 44px;
+  font-size: 2.22vw;
+  line-height: 1.2em;
   color: #11171d;
   font-weight: 700;
   text-align: justify;
   letter-spacing: -0.02em;
-  margin-inline-start: 35%;
-  margin-top: 5.5%;
+  margin-inline-start: 15.28vw;
+  margin-top: 4.31vw;
 
   ${Responsive.SM} {
-    font-size: 2.5vw;
-    margin-top: 2%;
-    margin-inline-start: 45%;
+    font-size: 2.8vw;
+    margin-top: 8vw;
+    margin-inline-start: 18vw;
   }
 `;
