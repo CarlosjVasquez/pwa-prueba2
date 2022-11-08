@@ -36,7 +36,7 @@ export const TextContainer = styled(Container)`
     font-weight: bold;
 
     ${Responsive.SM} {
-      font-size: 9.1vw;
+      font-size: 8.5vw;
     }
   }
 
@@ -68,8 +68,9 @@ export const ImgBg = styled.div`
   right: 0;
 
   ${Responsive.SM} {
-    width: 100%;
+    width: 65%;
     min-height: 80vw;
-    left: 41%;
+    left: 35%;
+    background-position: left;
   }
 `;
