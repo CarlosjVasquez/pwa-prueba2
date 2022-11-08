@@ -9,7 +9,7 @@
         "start:master": "nx run difierelo:serve:test --configuration:production",
         "build": "nx build",
         "build:prod": "nx run difierelo:build:production --configuration:production",
-        "build:develop": "nx run difierelo:build:development --configuration:development",
+        "build:develop": "nx run build",
         "build:test": "nx run difierelo:build:test --configuration:test",
         "build:master": "nx build --configuration:production",
         "run:master": "nx run difierelo:serve --configuration:prod",
