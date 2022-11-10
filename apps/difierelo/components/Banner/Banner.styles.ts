@@ -123,3 +123,11 @@ export const BadgesContainer = styled.div`
     display: none;
   }
 `;
+
+export const ButtonsContainer = styled.div`
+  margin-top: 3.47vw;
+
+  ${Responsive.SM} {
+    margin-top: 4vw;
+  }
+`;
