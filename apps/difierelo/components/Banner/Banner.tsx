@@ -2,6 +2,7 @@ import Row from 'react-bootstrap/Row';
 import * as S from './Banner.styles';
 
 import styled from 'styled-components';
+import Badge from '../core/Badge/Badge';
 
 const Banner: React.FunctionComponent = () => {
   return (
@@ -28,6 +29,13 @@ const Banner: React.FunctionComponent = () => {
               Compra Ahora y <span className="highlight">Paga después</span> con
               Difierelo
             </p>
+
+            <S.BadgesContainer>
+              <Badge icon="🙅" title="Sin Garantes" />
+              <Badge icon="📄" title="Sin Papelos" />
+              <Badge icon="💸" title="Pagos Flexibles" />
+              <Badge icon="🔗" title="100% en línea" />
+            </S.BadgesContainer>
           </S.Col>
         </Row>
       </S.TextContainer>

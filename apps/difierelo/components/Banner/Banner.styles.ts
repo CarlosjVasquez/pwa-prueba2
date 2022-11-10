@@ -113,3 +113,13 @@ export const ImgDecoration = styled(Image)`
     width: 5.1vw;
   }
 `;
+
+export const BadgesContainer = styled.div`
+  margin-top: 1.53vw;
+  display: flex;
+  justify-content: space-between;
+
+  ${Responsive.SM} {
+    display: none;
+  }
+`;
