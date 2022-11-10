@@ -3,7 +3,7 @@ import BSCol from 'react-bootstrap/Col';
 import * as S from './Business.styles';
 import BusinessItem from './components/BusinessItem';
 import { Swiper, SwiperSlide as Slide } from 'swiper/react';
-import { Pagination } from 'swiper';
+import { Pagination, Autoplay } from 'swiper';
 import { sizes } from '../../utils/style/Responsive';
 
 const Business: React.FunctionComponent = () => {
@@ -39,8 +39,11 @@ const Business: React.FunctionComponent = () => {
           pagination={{
             clickable: true,
           }}
+          autoplay={{
+            delay: 5000,
+          }}
           breakpoints={swiperBreakpoints}
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
         >
           <Slide>
             <BusinessItem name="Frecuento" />
