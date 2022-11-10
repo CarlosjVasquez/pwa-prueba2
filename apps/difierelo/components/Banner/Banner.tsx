@@ -1,8 +1,7 @@
 import Row from 'react-bootstrap/Row';
-import * as S from './Banner.styles';
-
-import styled from 'styled-components';
 import Badge from '../core/Badge/Badge';
+import Button from '../core/Button/Button';
+import * as S from './Banner.styles';
 
 const Banner: React.FunctionComponent = () => {
   return (
@@ -36,6 +35,13 @@ const Banner: React.FunctionComponent = () => {
               <Badge icon="💸" title="Pagos Flexibles" />
               <Badge icon="🔗" title="100% en línea" />
             </S.BadgesContainer>
+
+            <S.ButtonsContainer>
+              <Button>Regístrate en minutos</Button>
+              <Button variant="outline-primary" className="d-none d-sm-block">
+                Explora los negocios
+              </Button>
+            </S.ButtonsContainer>
           </S.Col>
         </Row>
       </S.TextContainer>
