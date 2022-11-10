@@ -3,8 +3,32 @@ import myImage from '../../public/img/banner-bg.png';
 import Container from 'react-bootstrap/Container';
 import Responsive from '../../utils/style/Responsive';
 import BSCol from 'react-bootstrap/Col';
+import Image from 'next/image';
+
+export const BannerContainer = styled.section`
+  font-family: eina;
+  display: flex;
+  position: relative;
+
+  > p {
+    font-size: 1.29vw;
+    color: #11171d;
+    position: absolute;
+    bottom: 3.26vw;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    ${Responsive.SM} {
+      display: none;
+    }
+  }
+`;
 
 export const Col = styled(BSCol)`
+  position: relative;
   &.col-md-6 {
     width: 59%;
 
@@ -15,7 +39,6 @@ export const Col = styled(BSCol)`
 `;
 
 export const TextContainer = styled(Container)`
-  font-family: eina;
   padding-left: 5vw;
   display: flex;
   flex-direction: column;
@@ -34,6 +57,10 @@ export const TextContainer = styled(Container)`
     line-height: 1em;
     color: #11171d;
     font-weight: bold;
+
+    .decoration {
+      position: relative;
+    }
 
     ${Responsive.SM} {
       font-size: 8.5vw;
@@ -72,5 +99,17 @@ export const ImgBg = styled.div`
     min-height: 80vw;
     left: 35%;
     background-position: left;
+  }
+`;
+
+export const ImgDecoration = styled(Image)`
+  position: absolute;
+  width: 4vw;
+  bottom: 76%;
+  right: -73%;
+  height: auto;
+
+  ${Responsive.SM} {
+    width: 5.1vw;
   }
 `;
