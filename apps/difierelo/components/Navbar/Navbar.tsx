@@ -1,10 +1,11 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import BSNavbar from "react-bootstrap/Navbar";
-import Image from "next/image";
-import * as S from "./Navbar.styles";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import BSNavbar from 'react-bootstrap/Navbar';
+import * as S from './Navbar.styles';
+import { useRouter } from 'next/router';
 
 const Navbar: React.FunctionComponent = () => {
+  const router = useRouter();
   return (
     <S.Navbar collapseOnSelect expand="lg" fixed="top">
       <Container>
@@ -16,7 +17,7 @@ const Navbar: React.FunctionComponent = () => {
           <BSNavbar.Collapse id="navbarScroll">
             <Nav
               className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "550px" }}
+              style={{ maxHeight: '550px' }}
               navbarScroll
             >
               <Nav.Link href="#action1">
@@ -32,10 +33,18 @@ const Navbar: React.FunctionComponent = () => {
                 <h6>Contactos</h6>
               </Nav.Link>
             </Nav>
-            <S.BtnSuccess className="btn btn-w-m btn-sm">
+            <S.BtnSuccess
+              className="btn btn-w-m btn-sm"
+              onClick={() => router.push('/login')}
+            >
               Iniciar Sesión
             </S.BtnSuccess>
-            <S.BtnLight className="btn btn-w-m btn-sm">Regístrate</S.BtnLight>
+            <S.BtnLight
+              className="btn btn-w-m btn-sm"
+              onClick={() => router.push('/information')}
+            >
+              Regístrate
+            </S.BtnLight>
           </BSNavbar.Collapse>
         </S.Collapse>
       </Container>

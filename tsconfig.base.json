@@ -14,7 +14,29 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@digital-products-nx/data-access": ["libs/data-access/src/index.ts"],
+      "@digital-products-nx/data-access/biometric": [
+        "libs/data-access/biometric/src/index.ts"
+      ],
+      "@digital-products-nx/data-access/ocr": [
+        "libs/data-access/ocr/src/index.ts"
+      ],
+      "@digital-products-nx/data-access/otp": [
+        "libs/data-access/otp/src/index.ts"
+      ],
+      "@digital-products-nx/data-access/users": [
+        "libs/data-access/users/src/index.ts"
+      ],
+      "@digital-products-nx/feature-biometry": [
+        "libs/feature/biometry/src/index.ts"
+      ],
+      "@digital-products-nx/ui/generic": ["libs/ui/generic/src/index.ts"],
+      "@digital-products-nx/utility": ["libs/utility/src/index.ts"],
+      "@digital-products-nx/utility/axios": ["libs/utility/axios/src/index.ts"],
+      "@digital-products-nx/ui-next-ocr": ["libs/ui/next-ocr/src/index.ts"],
+      "@digital-products-nx/ui": ["libs/ui/breakpoints/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

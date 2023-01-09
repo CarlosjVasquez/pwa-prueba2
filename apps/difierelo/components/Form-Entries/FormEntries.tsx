@@ -1,0 +1,76 @@
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import Button from '../Button';
+import Input from '../Input';
+import * as S from './FormEntries.styles';
+
+export const FormEntries = () => {
+  const [entries, setEntries] = useState('');
+  const [expenses, setExpenses] = useState('');
+  const [extra, setExtra] = useState('');
+  const [clasBtn, setClasBtn] = useState(true);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (entries !== '' && expenses !== '') {
+      setClasBtn(false);
+    }
+  }, [entries, expenses]);
+
+  const sendData = () => {
+    if (entries !== '' && expenses !== '') {
+      console.log('entries', entries);
+      console.log('expenses', expenses);
+      router.push('/credit/credit-address');
+    }
+  };
+
+  return (
+    <S.Container>
+      <div className="d-flex pt-4">
+        <S.TextTitle>
+          Déjanos saber tus estado de ingresos/egresos mensuales
+        </S.TextTitle>
+      </div>
+      <S.ContainerInputs className="row">
+        <Input
+          type="text"
+          placeholder="Total Ingresos"
+          value={entries}
+          handleChange={setEntries}
+        />
+        <Input
+          type="text"
+          placeholder="Total Egresos"
+          value={expenses}
+          handleChange={setExpenses}
+        />
+      </S.ContainerInputs>
+      <div className="d-flex pt-4">
+        <S.TextSubtitle>
+          Si tienes un negocio propio y generas ingresos extra ayudanos
+          indicando el valor, todo esto ayudará en el proceso
+        </S.TextSubtitle>
+      </div>
+      <S.ContainerInputs className="row">
+        <Input
+          type="text"
+          placeholder="Ingresos Extra"
+          value={extra}
+          handleChange={setExtra}
+        />
+      </S.ContainerInputs>
+      <S.ContainerInfo className="d-flex">
+        <S.IconInfo className="d-flex" />
+        <S.TextInfo className="d-flex">
+          Esta información se mantendrá privada y nunca aparecerá en su perfil
+          público.
+        </S.TextInfo>
+      </S.ContainerInfo>
+      <div className="d-flex justify-content-center">
+        <Button text="Continuar" handleClick={sendData} disabled={clasBtn} />
+      </div>
+    </S.Container>
+  );
+};
+export default FormEntries;

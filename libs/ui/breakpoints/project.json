@@ -1,0 +1,23 @@
+{
+  "root": "libs/ui",
+  "sourceRoot": "libs/ui/breakpoints/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/ui/breakpoints/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ui/breakpoints"],
+      "options": {
+        "jestConfig": "libs/ui/breakpoints/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
