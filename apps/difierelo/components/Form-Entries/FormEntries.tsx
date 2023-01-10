@@ -12,15 +12,16 @@ export const FormEntries = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (entries !== '' && expenses !== '') {
+    if (entries !== '' && expenses !== '' && extra !== '') {
       setClasBtn(false);
     }
-  }, [entries, expenses]);
+  }, [entries, expenses, extra]);
 
   const sendData = () => {
     if (entries !== '' && expenses !== '') {
       console.log('entries', entries);
       console.log('expenses', expenses);
+      console.log('extra', extra);
       router.push('/credit/credit-address');
     }
   };

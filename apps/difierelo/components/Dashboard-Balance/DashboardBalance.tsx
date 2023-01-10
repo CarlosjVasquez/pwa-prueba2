@@ -1,6 +1,7 @@
 import * as S from './DashboardBalance.styles';
 
 export const DashboardBalance = () => {
+  const saldo = localStorage.getItem('amount');
   return (
     <>
       <S.DivCard className="card">
@@ -12,7 +13,7 @@ export const DashboardBalance = () => {
             </S.TextSubtitleCard>
           </S.DivCardBody>
           <S.DivCardBody1>
-            <S.TextNumber1>$120</S.TextNumber1>
+            <S.TextNumber1>{saldo}</S.TextNumber1>
           </S.DivCardBody1>
         </div>
         <div className="card-footer justify-content-between d-flex">
