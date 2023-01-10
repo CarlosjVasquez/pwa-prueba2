@@ -1,6 +1,6 @@
-import Navbar from "../Navbar";
-import Footer from "../Footer";
-import * as S from "./Layout.styles";
+import Navbar from '../Navbar';
+import Footer from '../Footer';
+import * as S from './Layout.styles';
 
 const Layout: React.FunctionComponent<any> = ({ children }) => {
   return (
