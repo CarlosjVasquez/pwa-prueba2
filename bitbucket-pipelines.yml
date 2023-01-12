@@ -23,20 +23,21 @@ definitions:
     name: Build and Push Docker Image - Front Web
     script:
       #- rm -rf node_modules && rm package-lock.json
-      - rm -rf node_modules
-      - npm cache clean --force
-      - npm install
-      - while true; do date && ps -aux && sleep 5 && echo ""; done &
-      - while true; do date && echo "Memory usage in megabytes:" && echo $((`cat /sys/fs/cgroup/memory/memory.memsw.usage_in_bytes | awk '{print $1}'`/1048576)) && echo "" && sleep 5; done &
-      - npm run build:$BITBUCKET_BRANCH
-      - export NODE_OPTIONS=--max-old-space-size=6400
+      # - rm -rf node_modules
+      # - npm cache clean --force
+      # - npm install
+      # - while true; do date && ps -aux && sleep 5 && echo ""; done &
+      # - while true; do date && echo "Memory usage in megabytes:" && echo $((`cat /sys/fs/cgroup/memory/memory.memsw.usage_in_bytes | awk '{print $1}'`/1048576)) && echo "" && sleep 5; done &
+      # - npm run build:$BITBUCKET_BRANCH
+      # - export NODE_OPTIONS=--max-old-space-size=6400
       # Create docker URI
       - export VERSION=$BITBUCKET_BRANCH-$BITBUCKET_BUILD_NUMBER
       - export BRANCH=$BITBUCKET_BRANCH
       - export DOCKER_PUSH_URI=$DOCKER_USERNAME/$DOCKER_NAME:$VERSION
       - export DOCKER_URI=$DOCKER_NAME
+      - export ENVIRONMENT=$BITBUCKET_BRANCH
       # Build the image
-      - docker build -f deployment/Dockerfile -t $DOCKER_URI .
+      - docker build --build-arg ENVIRONMENT -f deployment/Dockerfile -t $DOCKER_URI .
       - echo "$DOCKER_HUB_PASSWORD" | docker login --username $DOCKER_HUB_USERNAME --password-stdin
       #- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - docker tag "$DOCKER_URI" "$DOCKER_PUSH_URI"

@@ -1,21 +1,16 @@
-### STAGE 1: Run ###
-# FROM nginx:1.17.1-alpine
-# COPY ./deployment/nginx/conf/nginx.conf /etc/nginx/nginx.conf
-# RUN mkdir -p /etc/nginx/certs
-# COPY ./deployment/nginx/certs /etc/nginx/certs
-# COPY ./dist/apps/difierelo/exported /usr/share/nginx/html
-# EXPOSE 80 443
-# CMD ["nginx", "-g", "daemon off;"]
-
-### STAGE 2: Run build ###
-FROM node:16.17.1-alpine
-
-ENV ENVIRONMENT=""
+### STAGE 1: Build ###
+FROM node:16.17.1-alpine AS build
+ARG ENVIRONMENT
 ENV PORT=""
 RUN mkdir /app && chmod -R 777 /app
+RUN rm -rf node_modules && rm -rf package-lock.json
 WORKDIR /app
+COPY . .
+RUN npm install
+RUN echo build:${ENVIRONMENT}
+RUN npm run build:${ENVIRONMENT}
 
-COPY dist/apps/difierelo .
+WORKDIR /app/dist/apps/difierelo
 
 EXPOSE 3000
 
