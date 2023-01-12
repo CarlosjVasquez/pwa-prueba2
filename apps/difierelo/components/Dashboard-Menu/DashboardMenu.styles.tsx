@@ -1,6 +1,18 @@
 import styled from 'styled-components';
 import Responsive from '../../utils/style/Responsive';
+import BSNavbar from 'react-bootstrap/Navbar';
 import imageBannerText from '../../public/difierelo-512x512.png';
+
+export const Navbar = styled(BSNavbar)`
+  background-color: #f7f7f7;
+  width: 100%;
+`;
+
+export const Collapse = styled(BSNavbar.Collapse)`
+  background-color: #f7f7f7;
+  padding-bottom: 10px;
+  padding-inline-start: 10px;
+`;
 
 export const ImgDifierelo = styled.div`
   background: url(${imageBannerText.src});
@@ -9,7 +21,7 @@ export const ImgDifierelo = styled.div`
   background-repeat: no-repeat;
   width: 10.56vw;
   min-height: 2.85vw;
-  margin-top: 2.85vw;
+  margin-top: 0.85vw;
   margin-inline-start: 2.08vw;
 
   ${Responsive.SM} {

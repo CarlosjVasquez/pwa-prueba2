@@ -16,10 +16,10 @@ export const BannerDashboard = () => {
 
   return (
     <>
-      <S.ContainerList className="d-flex bg-white">
+      <S.ContainerList>
         <DashboardMenu />
       </S.ContainerList>
-      <S.ContainerInformation className="d-flex bg-white">
+      <S.ContainerInformation>
         <S.TextUser className="row justify-content-between">
           <div className="w-50">
             <S.CreditButton onClick={onLoading}>
