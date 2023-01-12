@@ -1,15 +1,19 @@
 import { useRouter } from 'next/router';
 import * as S from './CreditAcept.styles';
-import currencyFormatter from '../../../utils/Formats';
+import { currencyFormatter } from '../../../utils/Formats';
 import Button from '../../Button';
 import ButtonReturn from '../../Button-Return';
+import { useState } from 'react';
 
 export const CreditAcept = () => {
   const amount = localStorage.getItem('amount');
   const amountR = localStorage.getItem('amountReduce');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingR, setIsLoadingR] = useState(false);
   const router = useRouter();
 
   const sendData = () => {
+    setIsLoading(true);
     if (amountR === '0') {
       router.push('/credit/credit-success');
     }
@@ -23,6 +27,7 @@ export const CreditAcept = () => {
   };
 
   const rejectMoney = () => {
+    setIsLoadingR(true);
     localStorage.setItem(
       'amount',
       currencyFormatter({ currency: 'USD', value: '0.00' })
@@ -43,13 +48,13 @@ export const CreditAcept = () => {
         </div>
         <div className="d-flex justify-content-center pt-4">
           <S.TextTitle>
-            ¡Tu crédito ya
-            <br /> está aprobado!
+            ¡Tu solicitud
+            <br /> está aprobada!
           </S.TextTitle>
         </div>
         <div className="d-flex row justify-content-center pt-4">
           <div className="d-flex justify-content-center">
-            <S.TextConditions>El monto disponible es:</S.TextConditions>
+            <S.TextConditions>El monto aprobado es:</S.TextConditions>
           </div>
           <div className="d-flex justify-content-center pt-3">
             <S.TextAmpount>
@@ -71,13 +76,19 @@ export const CreditAcept = () => {
         <div className="d-flex justify-content-between pt-4 mx-5">
           <div className="d-flex w-50 p-2">
             <ButtonReturn
-              text="Regresar"
+              text={amountR !== '0' ? 'Rechazar' : 'Regresar'}
               handleClick={rejectMoney}
               disabled={false}
+              loading={isLoadingR}
             />
           </div>
           <div className="d-flex w-50 p-2">
-            <Button text="Aceptar" handleClick={sendData} disabled={false} />
+            <Button
+              text="Aceptar"
+              handleClick={sendData}
+              disabled={false}
+              loading={isLoading}
+            />
           </div>
         </div>
         <div className="d-flex flex-column mx-5">

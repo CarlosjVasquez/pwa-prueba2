@@ -10,15 +10,19 @@ import { useRouter } from 'next/router';
 export const BannerDashboard = () => {
   const router = useRouter();
 
+  const onLoading = () => {
+    router.push('/credit/credit-entry');
+  };
+
   return (
     <>
-      <S.ContainerList>
+      <S.ContainerList className="d-flex bg-white">
         <DashboardMenu />
       </S.ContainerList>
-      <S.ContainerInformation>
+      <S.ContainerInformation className="d-flex bg-white">
         <S.TextUser className="row justify-content-between">
           <div className="w-50">
-            <S.CreditButton onClick={() => router.push('/credit/credit-entry')}>
+            <S.CreditButton onClick={onLoading}>
               Solicitar Nuevo Crédito
             </S.CreditButton>
           </div>
@@ -26,7 +30,7 @@ export const BannerDashboard = () => {
             ¡Hola José! <S.IconUser />
           </div>
         </S.TextUser>
-        <S.ContainerDash className="row p-0 m-0">
+        <S.ContainerDash className="row p-0 m-0 bg-white">
           <S.InfoDash1 className="p-0 m-0">
             <S.TextTitle className="d-flex w-100">
               ¿Qué quieres comprar hoy?

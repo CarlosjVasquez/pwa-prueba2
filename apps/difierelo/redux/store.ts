@@ -38,7 +38,7 @@ export const makeStore = () => {
   } else {
     const persistConfig = {
       key: 'nextjs',
-      whitelist: ['products', 'user', 'productSelect'],
+      whitelist: [''],
       storage,
     };
 

@@ -46,6 +46,7 @@ export const TextTitle = styled.h1`
   line-height: 1.53vw;
   align-items: center;
   color: #11171d;
+  text-align: center;
 
   ${Responsive.SM} {
     font-size: 3.95vw;

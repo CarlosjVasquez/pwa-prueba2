@@ -6,11 +6,13 @@ import * as S from './FormAddress.styles';
 
 export const FormAddress = () => {
   const [address, setAddress] = useState('');
+  const [address1, setAddress1] = useState('');
   const [codPostal, setCodPostal] = useState('');
   const [country, setCountry] = useState('');
   const [stateCountry, setStateCountry] = useState('');
   const [city, setCity] = useState('');
   const [clasBtn, setClasBtn] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -19,11 +21,12 @@ export const FormAddress = () => {
       codPostal !== '' &&
       country !== '' &&
       stateCountry !== '' &&
-      city !== ''
+      city !== '' &&
+      address1 !== ''
     ) {
       setClasBtn(false);
     }
-  }, [address, codPostal, country, stateCountry, city]);
+  }, [address, codPostal, country, stateCountry, city, address1]);
 
   const sendData = () => {
     if (
@@ -31,13 +34,16 @@ export const FormAddress = () => {
       codPostal !== '' &&
       country !== '' &&
       stateCountry !== '' &&
-      city !== ''
+      city !== '' &&
+      address1 !== ''
     ) {
       console.log('address', address);
+      console.log('address1', address1);
       console.log('codPostal', codPostal);
       console.log('country', country);
       console.log('stateCountry', stateCountry);
       console.log('city', city);
+      setIsLoading(true);
       router.push('/credit/credit-amount');
     }
   };
@@ -55,23 +61,11 @@ export const FormAddress = () => {
       <S.ContainerInputs className="row">
         <Input
           type="text"
-          placeholder="Dirección"
-          value={address}
-          handleChange={setAddress}
-        />
-        <Input
-          type="text"
-          placeholder="Código Postal"
-          value={codPostal}
-          handleChange={setCodPostal}
-        />
-        <Input
-          type="text"
           placeholder="País"
           value={country}
           handleChange={setCountry}
         />
-        <div className="w-50 p-0">
+        <div className="w-50">
           <Input
             type="text"
             placeholder="Provincia/Estado"
@@ -87,6 +81,24 @@ export const FormAddress = () => {
             handleChange={setCity}
           />
         </div>
+        <Input
+          type="text"
+          placeholder="Dirección - Calle primaria"
+          value={address}
+          handleChange={setAddress}
+        />
+        <Input
+          type="text"
+          placeholder="Dirección - Calle secundaria - Información adicional"
+          value={address1}
+          handleChange={setAddress1}
+        />
+        <Input
+          type="text"
+          placeholder="Código Postal"
+          value={codPostal}
+          handleChange={setCodPostal}
+        />
       </S.ContainerInputs>
       <S.ContainerInfo className="d-flex">
         <S.IconInfo className="d-flex" />
@@ -96,7 +108,12 @@ export const FormAddress = () => {
         </S.TextInfo>
       </S.ContainerInfo>
       <div className="d-flex justify-content-center">
-        <Button text="Continuar" handleClick={sendData} disabled={clasBtn} />
+        <Button
+          text="Continuar"
+          handleClick={sendData}
+          disabled={clasBtn}
+          loading={isLoading}
+        />
       </div>
     </S.Container>
   );

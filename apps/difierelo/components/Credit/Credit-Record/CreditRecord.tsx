@@ -7,6 +7,7 @@ import * as S from './CreditRecord.styles';
 export const CreditRecord = () => {
   const [acept, setAcept] = useState(false);
   const [clasBtn, setClasBtn] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   const validationHistory = (e: any) => {
@@ -20,6 +21,7 @@ export const CreditRecord = () => {
   };
 
   const sendData = () => {
+    setIsLoading(true);
     localStorage.setItem('acept', acept.toString());
     router.push('/credit/credit-validation');
   };
@@ -61,7 +63,12 @@ export const CreditRecord = () => {
           </div>
         </S.DivValidation>
         <div className="d-flex justify-content-center pt-5">
-          <Button text="Continuar" handleClick={sendData} disabled={clasBtn} />
+          <Button
+            text="Continuar"
+            handleClick={sendData}
+            disabled={clasBtn}
+            loading={isLoading}
+          />
         </div>
       </S.Container>
     </>

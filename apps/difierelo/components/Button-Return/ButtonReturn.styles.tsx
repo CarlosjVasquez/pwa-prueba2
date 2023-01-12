@@ -41,3 +41,7 @@ export const ButtonContinue = styled.button`
     line-height: 5.87vw;
   }
 `;
+
+export const StyleSpinner = styled.div`
+  color: #4544ed;
+`;

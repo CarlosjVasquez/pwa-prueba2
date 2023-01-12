@@ -1,12 +1,15 @@
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import Button from '../../Button';
 import * as S from './CreditFinish.styles';
 
 export const CreditFinish = () => {
   const amount = localStorage.getItem('amount');
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   const sendData = () => {
+    setIsLoading(true);
     router.push('/dashboard');
   };
 
@@ -19,7 +22,7 @@ export const CreditFinish = () => {
           </S.BannerImage>
         </div>
         <div className="d-flex justify-content-center">
-          <img src="../icons/checkSuccess.svg" />
+          <img src="../icons/Happystudent.svg" />
         </div>
         <div className="d-flex justify-content-center pt-4">
           <S.TextTitle>¡Disfruta de tu crédito!</S.TextTitle>
@@ -33,7 +36,12 @@ export const CreditFinish = () => {
           </div>
         </div>
         <div className="d-flex justify-content-center pt-4 mx-5">
-          <Button text="Aceptar" handleClick={sendData} disabled={false} />
+          <Button
+            text="Aceptar"
+            handleClick={sendData}
+            disabled={false}
+            loading={isLoading}
+          />
         </div>
         <div className="d-flex flex-column mx-5">
           <div className="d-flex">
