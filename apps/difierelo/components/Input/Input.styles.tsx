@@ -9,6 +9,13 @@ export const FormInput = styled.input`
   border-radius: 6px;
   margin-bottom: 0.56vw;
 
+  &:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+
   //text
   font-family: Eina 02;
   font-style: normal;
@@ -26,5 +33,16 @@ export const FormInput = styled.input`
     font-size: 3.73vw;
     line-height: 5.33vw;
     padding-left: 4.27vw;
+  }
+`;
+
+export const FormSpan = styled.span`
+  height: 3.61vw;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #2d3748;
+
+  ${Responsive.SM} {
+    min-height: 13.87vw;
   }
 `;

@@ -17,7 +17,7 @@ export const CreditError = () => {
           </S.BannerImage>
         </div>
         <div className="d-flex justify-content-center">
-          <img src="../icons/Happystudent.svg" />
+          <img src="../icons/Sad.svg" />
         </div>
         <div className="d-flex justify-content-center pt-4">
           <S.TextTitle>¡Lo sentimos!</S.TextTitle>

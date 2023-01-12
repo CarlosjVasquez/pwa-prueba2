@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import * as S from './CreditAcept.styles';
-import currencyFormatter from '../../../utils/Formats';
+import { currencyFormatter } from '../../../utils/Formats';
 import Button from '../../Button';
 import ButtonReturn from '../../Button-Return';
 
@@ -43,13 +43,13 @@ export const CreditAcept = () => {
         </div>
         <div className="d-flex justify-content-center pt-4">
           <S.TextTitle>
-            ¡Tu crédito ya
-            <br /> está aprobado!
+            ¡Tu solicitud
+            <br /> está aprobada!
           </S.TextTitle>
         </div>
         <div className="d-flex row justify-content-center pt-4">
           <div className="d-flex justify-content-center">
-            <S.TextConditions>El monto disponible es:</S.TextConditions>
+            <S.TextConditions>El monto aprobado es:</S.TextConditions>
           </div>
           <div className="d-flex justify-content-center pt-3">
             <S.TextAmpount>
@@ -71,7 +71,7 @@ export const CreditAcept = () => {
         <div className="d-flex justify-content-between pt-4 mx-5">
           <div className="d-flex w-50 p-2">
             <ButtonReturn
-              text="Regresar"
+              text={amountR !== '0' ? 'Rechazar' : 'Regresar'}
               handleClick={rejectMoney}
               disabled={false}
             />

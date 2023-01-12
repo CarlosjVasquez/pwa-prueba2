@@ -1,10 +1,26 @@
-function currencyFormatter({ currency, value }) {
+export function currencyFormatter({ currency, value }) {
+  const val = value.replace(/[$]/g, '');
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     minimumFractionDigits: 2,
     currency,
   });
-  return formatter.format(value);
+  return formatter.format(val);
 }
 
-export default currencyFormatter;
+const onlyNumber = (value: string) => {
+  return value.replace(/[^.,\d]/g, '');
+};
+
+export function formatNumber(number: string) {
+  const numberValidate = onlyNumber(number);
+  const num_parts = numberValidate
+    .toString()
+    .replace(/\./g, '')
+    .split(',')
+    .slice(0, 2);
+  num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  if (num_parts[1])
+    num_parts[1] = Math.round(Number(num_parts[1])).toString().slice(0, 2);
+  return num_parts.join(',');
+}

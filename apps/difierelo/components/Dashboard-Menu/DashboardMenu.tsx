@@ -1,6 +1,9 @@
+import { useRouter } from 'next/router';
 import * as S from './DashboardMenu.styles';
 
 export const DashboardMenu = () => {
+  const router = useRouter();
+
   return (
     <>
       <S.ImgDifierelo />
@@ -17,7 +20,9 @@ export const DashboardMenu = () => {
         <S.TextOptions>Configuración</S.TextOptions>
       </S.ListAll>
       <S.ContainerLogout>
-        <S.TextOptions>Cerrar Sesión</S.TextOptions>
+        <S.TextOptions className="btn" onClick={() => router.push('/')}>
+          Cerrar Sesión
+        </S.TextOptions>
       </S.ContainerLogout>
     </>
   );

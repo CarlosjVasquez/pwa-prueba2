@@ -19,7 +19,7 @@ export const CreditFinish = () => {
           </S.BannerImage>
         </div>
         <div className="d-flex justify-content-center">
-          <img src="../icons/checkSuccess.svg" />
+          <img src="../icons/Happystudent.svg" />
         </div>
         <div className="d-flex justify-content-center pt-4">
           <S.TextTitle>¡Disfruta de tu crédito!</S.TextTitle>

@@ -31,7 +31,7 @@ export const CreditButton = styled.button`
   background: #4544ed;
   border: none;
   border-radius: 0.56vw;
-  margin-left: 3.47vw;
+  margin-left: 5.47vw;
 
   font-family: Eina 02;
   font-style: normal;

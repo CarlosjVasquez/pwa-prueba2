@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Button from '../Button';
 import * as S from './FormAmount.styles';
-import currencyFormatter from '../../utils/Formats';
+import { currencyFormatter } from '../../utils/Formats';
 
 export const FormAmount = () => {
   const [amount, setAmount] = useState('0.00');

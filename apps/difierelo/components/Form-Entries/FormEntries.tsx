@@ -10,6 +10,8 @@ export const FormEntries = () => {
   const [extra, setExtra] = useState('');
   const [clasBtn, setClasBtn] = useState(true);
   const router = useRouter();
+  const [digit, setDigit] = useState('');
+  const arrayDigits = [];
 
   useEffect(() => {
     if (entries !== '' && expenses !== '' && extra !== '') {
@@ -39,12 +41,14 @@ export const FormEntries = () => {
           placeholder="Total Ingresos"
           value={entries}
           handleChange={setEntries}
+          typeFormat="currency"
         />
         <Input
           type="text"
           placeholder="Total Egresos"
           value={expenses}
           handleChange={setExpenses}
+          typeFormat="currency"
         />
       </S.ContainerInputs>
       <div className="d-flex pt-4">
@@ -59,6 +63,7 @@ export const FormEntries = () => {
           placeholder="Ingresos Extra"
           value={extra}
           handleChange={setExtra}
+          typeFormat="currency"
         />
       </S.ContainerInputs>
       <S.ContainerInfo className="d-flex">
