@@ -1,5 +1,8 @@
 import { useRouter } from 'next/router';
 import * as S from './DashboardMenu.styles';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import BSNavbar from 'react-bootstrap/Navbar';
 
 export const DashboardMenu = () => {
   const router = useRouter();
