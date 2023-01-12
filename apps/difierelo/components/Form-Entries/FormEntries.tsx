@@ -9,9 +9,8 @@ export const FormEntries = () => {
   const [expenses, setExpenses] = useState('');
   const [extra, setExtra] = useState('');
   const [clasBtn, setClasBtn] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-  const [digit, setDigit] = useState('');
-  const arrayDigits = [];
 
   useEffect(() => {
     if (entries !== '' && expenses !== '' && extra !== '') {
@@ -24,6 +23,7 @@ export const FormEntries = () => {
       console.log('entries', entries);
       console.log('expenses', expenses);
       console.log('extra', extra);
+      setIsLoading(true);
       router.push('/credit/credit-address');
     }
   };
@@ -74,7 +74,12 @@ export const FormEntries = () => {
         </S.TextInfo>
       </S.ContainerInfo>
       <div className="d-flex justify-content-center">
-        <Button text="Continuar" handleClick={sendData} disabled={clasBtn} />
+        <Button
+          text="Continuar"
+          handleClick={sendData}
+          disabled={clasBtn}
+          loading={isLoading}
+        />
       </div>
     </S.Container>
   );

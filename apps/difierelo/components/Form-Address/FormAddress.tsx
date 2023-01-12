@@ -12,6 +12,7 @@ export const FormAddress = () => {
   const [stateCountry, setStateCountry] = useState('');
   const [city, setCity] = useState('');
   const [clasBtn, setClasBtn] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -42,6 +43,7 @@ export const FormAddress = () => {
       console.log('country', country);
       console.log('stateCountry', stateCountry);
       console.log('city', city);
+      setIsLoading(true);
       router.push('/credit/credit-amount');
     }
   };
@@ -106,7 +108,12 @@ export const FormAddress = () => {
         </S.TextInfo>
       </S.ContainerInfo>
       <div className="d-flex justify-content-center">
-        <Button text="Continuar" handleClick={sendData} disabled={clasBtn} />
+        <Button
+          text="Continuar"
+          handleClick={sendData}
+          disabled={clasBtn}
+          loading={isLoading}
+        />
       </div>
     </S.Container>
   );

@@ -8,8 +8,8 @@ export const FormAmount = () => {
   const [amount, setAmount] = useState('0.00');
   const [digit, setDigit] = useState('');
   const [clasBtn, setClasBtn] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-  const arrayDigits = [];
 
   useEffect(() => {
     if (amount !== '0.00') {
@@ -34,7 +34,6 @@ export const FormAmount = () => {
 
   const addNumber = (val) => {
     setDigit(digit + val);
-    arrayDigits.push(val);
   };
 
   const clearNumber = () => {
@@ -44,6 +43,7 @@ export const FormAmount = () => {
 
   const sendData = () => {
     if (amount !== '') {
+      setIsLoading(true);
       localStorage.setItem('amount', amount);
       router.push('/credit/credit-history');
     }
@@ -149,7 +149,12 @@ export const FormAmount = () => {
         </div>
       </S.DivNumbers>
       <div className="d-flex justify-content-center">
-        <Button text="Continuar" handleClick={sendData} disabled={clasBtn} />
+        <Button
+          text="Continuar"
+          handleClick={sendData}
+          disabled={clasBtn}
+          loading={isLoading}
+        />
       </div>
     </S.Container>
   );

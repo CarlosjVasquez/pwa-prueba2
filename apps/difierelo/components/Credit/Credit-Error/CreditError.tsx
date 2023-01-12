@@ -1,11 +1,14 @@
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import Button from '../../Button';
 import * as S from './CreditError.styles';
 
 export const CreditError = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   const sendData = () => {
+    setIsLoading(true);
     router.push('/dashboard');
   };
   return (
@@ -31,7 +34,12 @@ export const CreditError = () => {
           </div>
         </div>
         <div className="d-flex justify-content-center pt-4 mx-5">
-          <Button text="Reintentar" handleClick={sendData} disabled={false} />
+          <Button
+            text="Reintentar"
+            handleClick={sendData}
+            disabled={false}
+            loading={isLoading}
+          />
         </div>
       </S.Container>
     </>
