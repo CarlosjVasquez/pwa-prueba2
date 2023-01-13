@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Responsive from '../../utils/style/Responsive';
+import Navbar from 'react-bootstrap/Navbar';
 import iconUser from '../../public/icons/Ellipse150.svg';
 
 export const ContainerList = styled.div`
@@ -10,6 +11,15 @@ export const ContainerList = styled.div`
 
   ${Responsive.SM} {
     width: 40%;
+  }
+`;
+
+export const StyleNavar = styled(Navbar)`
+  width: 75vw;
+  background: linear-gradient(0deg, #f8f8f4, #f8f8f4);
+
+  ${Responsive.SM} {
+    width: 40vw;
   }
 `;
 
@@ -31,7 +41,7 @@ export const CreditButton = styled.button`
   background: #4544ed;
   border: none;
   border-radius: 0.56vw;
-  margin-left: 5.47vw;
+  margin-left: 3.47vw;
 
   font-family: Eina 02;
   font-style: normal;
@@ -45,7 +55,7 @@ export const CreditButton = styled.button`
   ${Responsive.SM} {
     width: 34vw;
     height: 9.38vw;
-    margin-left: 0.5vw;
+    margin-left: 0.1vw;
     border-radius: 1.39vw;
 
     font-size: 2.78vw;
@@ -55,13 +65,9 @@ export const CreditButton = styled.button`
 
 export const ContainerInformation = styled.div`
   position: relative;
-  width: 75vw;
+  width: 80%;
   justify-content: end;
   display: flex;
-
-  ${Responsive.SM} {
-    width: 60%;
-  }
 `;
 
 export const IconUser = styled.div`
@@ -81,10 +87,12 @@ export const IconUser = styled.div`
 
 export const TextUser = styled.div`
   width: 100%;
-  position: absolute;
+  position: relative;
   display: flex;
   padding-top: 1.18vw;
-  margin-inline-end: 2.57vw;
+  padding-bottom: 0.75vw;
+  align-items: center;
+  background: linear-gradient(0deg, #f8f8f4, #f8f8f4);
   align-items: center;
 
   font-family: Eina 02;
@@ -95,6 +103,9 @@ export const TextUser = styled.div`
   color: #050a39;
 
   ${Responsive.SM} {
+    padding-top: 2.95vw;
+    padding-bottom: 2.35vw;
+
     font-size: 2.78vw;
     line-height: 4.17vw;
   }
@@ -102,20 +113,19 @@ export const TextUser = styled.div`
 
 export const ContainerDash = styled.div`
   position: absolute;
-  width: 75vw;
+  width: 100%;
   margin-top: 7.43vw !important;
   flex-direction: row;
   display: flex;
 
   ${Responsive.SM} {
-    width: 100%;
     margin-top: 18.58vw !important;
   }
 `;
 
 export const InfoDash1 = styled.div`
   position: relative;
-  width: 37.5vw;
+  width: 50vw;
   display: flex;
   height: 17vw;
 
@@ -127,12 +137,12 @@ export const InfoDash1 = styled.div`
 
 export const InfoDash2 = styled.div`
   position: relative;
-  width: 37.5vw;
+  width: 45vw;
   display: flex;
   height: 17vw;
 
   ${Responsive.SM} {
-    width: 100%;
+    width: 90%;
     height: 50vw;
     display: none;
   }
@@ -140,19 +150,19 @@ export const InfoDash2 = styled.div`
 
 export const InfoDash3 = styled.div`
   position: relative;
-  width: 37.5vw;
+  width: 48.5vw;
   display: flex;
   height: 20vw;
 
   ${Responsive.SM} {
-    width: 100%;
+    width: 90%;
     height: 40vw;
   }
 `;
 
 export const InfoDash4 = styled.div`
   position: relative;
-  width: 37.5vw;
+  width: 45vw;
   display: flex;
   height: 20vw;
 
@@ -164,12 +174,11 @@ export const InfoDash4 = styled.div`
 
 export const InfoDash5 = styled.div`
   position: relative;
-  width: 75vw;
+  width: 100vw;
   display: flex;
   height: 20vw;
 
   ${Responsive.SM} {
-    width: 100%;
     height: 40vw;
     display: none;
   }
@@ -203,9 +212,9 @@ export const TextSubtitle = styled.h1`
   position: absolute;
 
   ${Responsive.SM} {
-    font-size: 2.95vw;
+    font-size: 3.25vw;
     line-height: 3.82vw;
-    padding-left: 0vw !important;
+    padding-left: 1vw !important;
   }
 `;
 

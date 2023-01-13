@@ -3,12 +3,12 @@ import Responsive from '../../utils/style/Responsive';
 import icon from '../../public/icons/Frame1.svg';
 
 export const DivCard = styled.div`
-  width: 30vw;
-  min-height: 9.72vw;
+  width: 40vw;
+  min-height: 10.72vw;
 
   ${Responsive.SM} {
-    width: 56vw;
-    min-height: 24.31vw;
+    width: 92vw;
+    min-height: 28vw;
   }
 `;
 
@@ -28,13 +28,13 @@ export const TextTitleCard = styled.h1`
   font-family: Eina 02;
   font-style: normal;
   font-weight: 600;
-  font-size: 0.9vw;
+  font-size: 1.2vw;
   line-height: 1.39vw;
   color: #050a39;
   padding-left: 1.04vw !important;
 
   ${Responsive.SM} {
-    font-size: 2.26vw;
+    font-size: 3.26vw;
     line-height: 3.47vw;
     padding-left: 2.6vw;
   }
@@ -44,13 +44,13 @@ export const TextSubtitleCard = styled.h1`
   font-family: Eina 02;
   font-style: normal;
   font-weight: 400;
-  font-size: 0.9vw;
+  font-size: 1vw;
   line-height: 1.39vw;
   color: #050a39;
   padding-left: 1.04vw !important;
 
   ${Responsive.SM} {
-    font-size: 2.26vw;
+    font-size: 2.55vw;
     line-height: 3.47vw;
     padding-left: 2.6vw;
   }
@@ -74,13 +74,13 @@ export const TextFooterCard = styled.a`
   font-family: Eina 02;
   font-style: normal;
   font-weight: 600;
-  font-size: 0.83vw;
+  font-size: 0.98vw;
   line-height: 1.39vw;
   color: #050a39;
   text-decoration: none;
 
   ${Responsive.SM} {
-    font-size: 2.08vw;
+    font-size: 2.55vw;
     line-height: 3.47vw;
   }
 `;

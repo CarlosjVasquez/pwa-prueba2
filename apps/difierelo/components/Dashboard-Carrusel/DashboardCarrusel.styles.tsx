@@ -6,7 +6,7 @@ export const DivCarrusel = styled.div`
   margin-top: 2.88vw;
   position: absolute;
   margin-inline-start: 4vw;
-  width: 31vw;
+  width: 90vw;
 
   ${Responsive.SM} {
     margin-top: 19vw;
@@ -17,7 +17,7 @@ export const DivCarrusel = styled.div`
 `;
 
 export const DivCardStore = styled.div`
-  width: 11.25vw !important;
+  width: 15vw !important;
   justify-content: center;
   margin-inline-end: 2.43vw;
 

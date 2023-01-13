@@ -1,18 +1,7 @@
 import styled from 'styled-components';
 import Responsive from '../../utils/style/Responsive';
-import BSNavbar from 'react-bootstrap/Navbar';
+import Navbar from 'react-bootstrap/Navbar';
 import imageBannerText from '../../public/difierelo-512x512.png';
-
-export const Navbar = styled(BSNavbar)`
-  background-color: #f7f7f7;
-  width: 100%;
-`;
-
-export const Collapse = styled(BSNavbar.Collapse)`
-  background-color: #f7f7f7;
-  padding-bottom: 10px;
-  padding-inline-start: 10px;
-`;
 
 export const ImgDifierelo = styled.div`
   background: url(${imageBannerText.src});
@@ -25,9 +14,9 @@ export const ImgDifierelo = styled.div`
   margin-inline-start: 2.08vw;
 
   ${Responsive.SM} {
-    width: 26.39vw;
+    width: 19vw;
     min-height: 7.12vw;
-    margin-inline-start: 5.21vw;
+    margin-inline-start: 0vw !important;
   }
 `;
 
@@ -55,20 +44,6 @@ export const ListAll = styled.div`
   }
 `;
 
-export const ContainerLogout = styled.div`
-  width: 100%;
-  align-items: center;
-  margin-top: 32.71vw;
-  margin-inline-start: 2.08vw;
-  margin-bottom: 6.46vw;
-
-  ${Responsive.SM} {
-    margin-top: 81.77vw;
-    margin-inline-start: 5.21vw;
-    margin-bottom: 16.15vw;
-  }
-`;
-
 export const TextOptions = styled.h1`
   font-family: Eina 02;
   font-style: normal;
@@ -80,5 +55,21 @@ export const TextOptions = styled.h1`
   ${Responsive.SM} {
     font-size: 2.78vw;
     line-height: 3.82vw;
+  }
+`;
+
+export const StyleNavar = styled(Navbar)`
+  width: 25vw;
+  background: linear-gradient(0deg, #f8f8f4, #f8f8f4);
+
+  ${Responsive.SM} {
+    width: 40vw;
+  }
+`;
+
+export const StyleNavarTog = styled(Navbar.Toggle)`
+  ${Responsive.SM} {
+    width: 10vw;
+    display: flex;
   }
 `;
