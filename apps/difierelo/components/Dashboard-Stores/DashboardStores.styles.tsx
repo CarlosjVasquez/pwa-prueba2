@@ -6,12 +6,12 @@ export const DivStore = styled.div`
   margin-top: 6.88vw;
   position: absolute;
   margin-inline-start: 4vw;
-  width: 31vw;
+  width: 45vw;
 
   ${Responsive.SM} {
     margin-top: 19vw;
-    margin-inline-start: 0vw !important;
-    width: 56vw;
+    margin-inline-start: 6vw;
+    width: 100%;
     left: 0;
   }
 `;
@@ -22,7 +22,7 @@ export const DivCardStore = styled.div`
   margin-inline-end: 2.43vw;
 
   ${Responsive.SM} {
-    width: 28.13vw !important;
+    width: 30vw !important;
     margin-inline-end: 6.6vw;
   }
 `;
@@ -45,7 +45,7 @@ export const CardBody = styled(BSCard.Body)`
 
     ${Responsive.SM} {
       margin-top: 2.75vw;
-      font-size: 2.78vw;
+      font-size: 3.78vw;
       line-height: 3.82vw;
     }
   }
@@ -56,7 +56,7 @@ export const CardBody = styled(BSCard.Body)`
     line-height: 1.25vw;
 
     ${Responsive.SM} {
-      font-size: 2.26vw;
+      font-size: 3.26vw;
       line-height: 3.13vw;
     }
   }

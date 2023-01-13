@@ -5,12 +5,12 @@ export const InfoPay = styled.div`
   margin-top: 1vw;
   position: absolute;
   margin-inline-start: 4vw;
-  width: 31vw;
+  width: 40vw;
 
   ${Responsive.SM} {
     margin-top: 2vw;
     margin-inline-start: 0vw !important;
-    width: 56vw;
+    width: 100%;
     left: 0;
   }
 `;
