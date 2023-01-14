@@ -4,6 +4,7 @@ import OnboardingOtp from '../OnboardingOtp';
 import * as S from './BannerOtp.styles';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { numbersValidation } from '../../utils/Formats';
 
 export const BannerOtp = () => {
   const [clasBtn, setClasBtn] = useState(true);
@@ -40,33 +41,91 @@ export const BannerOtp = () => {
     if (otp1 === '') {
       input1.current.focus();
     }
-    if (otp1 !== '' && otp2 === '') {
+
+    if (numbersValidation(otp1) === '') {
+      setOtp1('');
+      input1.current.value = '';
+    }
+
+    if (otp1 !== '' && numbersValidation(otp1) !== '' && otp2 === '') {
       input2.current.focus();
     }
-    if (otp1 !== '' && otp2 !== '' && otp3 === '') {
-      input3.current.focus();
+
+    if (numbersValidation(otp2) === '') {
+      setOtp2('');
+      input2.current.value = '';
     }
-    if (otp1 !== '' && otp2 !== '' && otp3 !== '' && otp4 === '') {
-      input4.current.focus();
-    }
+
     if (
       otp1 !== '' &&
+      numbersValidation(otp1) !== '' &&
       otp2 !== '' &&
+      numbersValidation(otp2) !== '' &&
+      otp3 === ''
+    ) {
+      input3.current.focus();
+    }
+
+    if (numbersValidation(otp3) === '') {
+      setOtp3('');
+      input3.current.value = '';
+    }
+
+    if (
+      otp1 !== '' &&
+      numbersValidation(otp1) !== '' &&
+      otp2 !== '' &&
+      numbersValidation(otp2) !== '' &&
       otp3 !== '' &&
+      numbersValidation(otp3) !== '' &&
+      otp4 === ''
+    ) {
+      input4.current.focus();
+    }
+
+    if (numbersValidation(otp4) === '') {
+      setOtp4('');
+      input4.current.value = '';
+    }
+
+    if (
+      otp1 !== '' &&
+      numbersValidation(otp1) !== '' &&
+      otp2 !== '' &&
+      numbersValidation(otp2) !== '' &&
+      otp3 !== '' &&
+      numbersValidation(otp3) !== '' &&
       otp4 !== '' &&
+      numbersValidation(otp4) !== '' &&
       otp5 === ''
     ) {
       input5.current.focus();
     }
+
+    if (numbersValidation(otp5) === '') {
+      setOtp5('');
+      input5.current.value = '';
+    }
+
     if (
       otp1 !== '' &&
+      numbersValidation(otp1) !== '' &&
       otp2 !== '' &&
+      numbersValidation(otp2) !== '' &&
       otp3 !== '' &&
+      numbersValidation(otp3) !== '' &&
       otp4 !== '' &&
+      numbersValidation(otp4) !== '' &&
       otp5 !== '' &&
+      numbersValidation(otp5) !== '' &&
       otp6 === ''
     ) {
       input6.current.focus();
+    }
+
+    if (numbersValidation(otp6) === '') {
+      setOtp6('');
+      input6.current.value = '';
     }
   }, [otp1, otp2, otp3, otp4, otp5, otp6]);
 
@@ -94,7 +153,7 @@ export const BannerOtp = () => {
     <>
       <S.Container>
         <div className="d-flex">
-          <div className="col-md-6">
+          <div className="d-flex col-md-6">
             <S.BannerText>
               <S.ImgDifierelo />
               <S.TextTitle>
@@ -102,8 +161,18 @@ export const BannerOtp = () => {
               </S.TextTitle>
             </S.BannerText>
           </div>
-          <div className="col-md-6">
-            <S.ImgNav />
+          <div className="d-flex col-md-6">
+            <S.BannerIcons>
+              <div className="d-flex justify-content-end">
+                <a className="px-2">
+                  <img src="./icons/question.svg" />
+                </a>
+                <a href="/information">
+                  <img src="./icons/close.svg" />
+                </a>
+              </div>
+              <S.ImgNav />
+            </S.BannerIcons>
           </div>
         </div>
         <OnboardingOtp

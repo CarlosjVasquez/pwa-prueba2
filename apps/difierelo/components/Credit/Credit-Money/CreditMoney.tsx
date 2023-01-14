@@ -7,8 +7,16 @@ export const CreditMoney = () => {
     <>
       <S.Container>
         <div className="d-flex">
-          <S.BannerImage>
+          <S.BannerImage className="d-flex justify-content-between">
             <S.ImgDifierelo />
+            <div className="d-flex justify-content-end align-content-center">
+              <a className="px-2">
+                <img src="../icons/question.svg" />
+              </a>
+              <a href="/credit/credit-address">
+                <img src="../icons/close.svg" />
+              </a>
+            </div>
           </S.BannerImage>
         </div>
         <div className="d-flex">

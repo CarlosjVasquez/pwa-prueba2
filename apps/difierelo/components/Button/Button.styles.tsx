@@ -4,8 +4,6 @@ import Responsive from '../../utils/style/Responsive';
 export const ButtonContinue = styled.button`
   width: 23.82vw;
   min-height: 3.75vw;
-  margin-top: 1.67vw;
-  margin-bottom: 7.36vw;
   display: flex;
   flex-direction: row;
   justify-content: center;

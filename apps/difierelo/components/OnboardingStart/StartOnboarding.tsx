@@ -30,7 +30,7 @@ export const StartOnboarding = (props: StartOnboardingProps) => {
         </S.TextInfoDocs>
       </S.InfoCedulaForm>
 
-      <S.InfoCedulaForm>
+      <S.InfoCedulaForm1>
         <S.TextInfoDocs>
           <S.IconPlanilla />
           <S.TextInfoForm>
@@ -38,7 +38,7 @@ export const StartOnboarding = (props: StartOnboardingProps) => {
             3 meses
           </S.TextInfoForm>
         </S.TextInfoDocs>
-      </S.InfoCedulaForm>
+      </S.InfoCedulaForm1>
 
       <S.DivPhone>
         <S.DivPhoneLabel>
@@ -67,7 +67,7 @@ export const StartOnboarding = (props: StartOnboardingProps) => {
             <a href="">Aviso de Privacidad</a> de Difierelo
           </S.TextConditions>
         </S.DivConditionsCheck>
-        <S.DivConditionsCheck className="d-flex">
+        <S.DivConditionsCheck1 className="d-flex position-relative">
           <S.CheckInput
             type="checkbox"
             onChange={(e: any) => props.setConfirm(e.target.checked)}
@@ -75,7 +75,7 @@ export const StartOnboarding = (props: StartOnboardingProps) => {
           <S.TextConditions>
             Confirmo que actúo por cuenta propia.
           </S.TextConditions>
-        </S.DivConditionsCheck>
+        </S.DivConditionsCheck1>
       </S.DivConditions>
     </>
   );

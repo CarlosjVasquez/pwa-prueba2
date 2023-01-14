@@ -87,7 +87,7 @@ export const TextTitle = styled.div`
   ${Responsive.SM} {
     width: 36.8vw;
     min-height: 13.33vw;
-    margin-top: 14.13vw;
+    margin-top: 8.13vw;
   }
 `;
 
@@ -136,4 +136,10 @@ export const Subtitle = styled.p`
 
 export const DivButton = styled.div`
   margin-inline-start: 4.53vw;
+  position: relative;
+  top: -1.5vw;
+
+  ${Responsive.SM} {
+    margin-inline-start: 1vw;
+  }
 `;

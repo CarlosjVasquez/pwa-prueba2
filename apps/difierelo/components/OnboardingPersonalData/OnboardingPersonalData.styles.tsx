@@ -4,11 +4,11 @@ import iconInfo from '../../public/icons/iconclose.svg';
 
 export const Container = styled.div`
   width: 90%;
-  margin-top: 0.49vw;
+  margin-top: 1.5vw;
   margin-inline-start: 1.11vw;
 
   ${Responsive.SM} {
-    margin-top: 1.87vw;
+    margin-top: 3.5vw;
     margin-inline-start: 4.27vw;
   }
 `;
@@ -54,12 +54,12 @@ export const ContainerInputs = styled.div`
 `;
 
 export const ContainerInfo = styled.div`
-  margin-top: 7.85vw;
-  margin-bottom: 2.43vw;
+  margin-top: 1.5vw;
+  margin-bottom: 1.43vw;
 
   ${Responsive.SM} {
-    margin-top: 30.13vw;
-    margin-bottom: 9.33vw;
+    margin-top: 8.13vw;
+    margin-bottom: 5.33vw;
   }
 `;
 
