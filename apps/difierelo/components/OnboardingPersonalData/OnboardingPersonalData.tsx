@@ -3,13 +3,18 @@ import Button from '../Button';
 import Input from '../Input';
 import * as S from './OnboardingPersonalData.styles';
 import { useRouter } from 'next/router';
+import { numbersValidation } from '../../utils/Formats';
 
 export const OnboardingPersonalData = () => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
+  const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
   const [identification, setIdentification] = useState('');
   const [clasBtn, setClasBtn] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [val, setVal] = useState(false);
+  const [val1, setVal1] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -17,24 +22,44 @@ export const OnboardingPersonalData = () => {
       name !== '' &&
       surname !== '' &&
       birthday !== '' &&
+      email !== '' &&
       identification !== '' &&
-      identification.length === 10
+      identification.length === 10 &&
+      numbersValidation(identification) !== ''
     ) {
       setClasBtn(false);
+      setVal1(false);
     }
-  }, [name, surname, birthday, identification]);
+
+    if (numbersValidation(identification) === '' && identification.length > 0) {
+      setIdentification('');
+      setVal(true);
+    }
+
+    if (numbersValidation(identification) !== '') {
+      setVal(false);
+    }
+
+    if (identification.length > 10) {
+      setClasBtn(true);
+      setVal1(true);
+    }
+  }, [name, surname, birthday, identification, email]);
 
   const sendDataPersonal = () => {
     if (
       name !== '' &&
       surname !== '' &&
       birthday !== '' &&
+      email !== '' &&
       identification !== ''
     ) {
       console.log('name', name);
       console.log('surname', surname);
+      console.log('email', email);
       console.log('birthday', birthday);
       console.log('identification', identification);
+      setIsLoading(true);
       router.push('/biometry-step');
     }
   };
@@ -64,6 +89,12 @@ export const OnboardingPersonalData = () => {
           handleChange={setSurname}
         />
         <Input
+          type="email"
+          placeholder="Correo electrónico"
+          value={email}
+          handleChange={setEmail}
+        />
+        <Input
           type="date"
           placeholder="Fecha Nacimiento"
           value={birthday}
@@ -75,6 +106,10 @@ export const OnboardingPersonalData = () => {
           value={identification}
           handleChange={setIdentification}
         />
+        {val && <small className="text-danger">Ingrese solo números</small>}
+        {val1 && (
+          <small className="text-danger">Ingrese una cédula correcta</small>
+        )}
       </S.ContainerInputs>
       <S.ContainerInfo className="d-flex">
         <S.IconInfo className="d-flex" />
@@ -83,11 +118,12 @@ export const OnboardingPersonalData = () => {
           público.
         </S.TextInfo>
       </S.ContainerInfo>
-      <div className="d-flex w-100 justify-content-center">
+      <div className="d-flex w-100 justify-content-center mx-1">
         <Button
           text="Continuar"
           handleClick={sendDataPersonal}
           disabled={clasBtn}
+          loading={isLoading}
         />
       </div>
     </S.Container>

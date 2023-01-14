@@ -1,9 +1,12 @@
+import { useRouter } from 'next/router';
 import Row from 'react-bootstrap/Row';
 import Badge from '../core/Badge/Badge';
 import Button from '../core/Button/Button';
 import * as S from './Banner.styles';
 
 const Banner: React.FunctionComponent = () => {
+  const router = useRouter();
+
   return (
     <S.BannerContainer>
       <S.ImgBg />
@@ -20,7 +23,7 @@ const Banner: React.FunctionComponent = () => {
                   width={100}
                   height={100}
                 />
-              </span>
+              </span>{' '}
               comprando
             </h1>
 
@@ -37,7 +40,9 @@ const Banner: React.FunctionComponent = () => {
             </S.BadgesContainer>
 
             <S.ButtonsContainer>
-              <Button>Regístrate en minutos</Button>
+              <Button onClick={() => router.push('/information')}>
+                Regístrate en minutos
+              </Button>
               <Button variant="outline-primary" className="d-none d-sm-block">
                 Explora los negocios
               </Button>

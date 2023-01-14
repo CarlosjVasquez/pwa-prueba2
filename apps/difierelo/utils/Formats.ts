@@ -8,9 +8,13 @@ export function currencyFormatter({ currency, value }) {
   return formatter.format(val);
 }
 
-const onlyNumber = (value: string) => {
+export function onlyNumber(value: string) {
   return value.replace(/[^.,\d]/g, '');
-};
+}
+
+export function numbersValidation(value: string) {
+  return value.replace(/[^0-9]/g, '');
+}
 
 export function formatNumber(number: string) {
   const numberValidate = onlyNumber(number);

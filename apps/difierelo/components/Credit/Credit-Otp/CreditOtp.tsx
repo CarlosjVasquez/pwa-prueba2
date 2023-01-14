@@ -5,6 +5,7 @@ import Button from '../../Button';
 import ModalRequest from '../../Modal-Request';
 import * as S from './CreditOtp.styles';
 import Modal from 'react-bootstrap/Modal';
+import { numbersValidation } from '../../../utils/Formats';
 
 export const CreditOtp = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,33 +67,91 @@ export const CreditOtp = () => {
     if (otp1 === '') {
       input1.current.focus();
     }
-    if (otp1 !== '' && otp2 === '') {
+
+    if (numbersValidation(otp1) === '') {
+      setOtp1('');
+      input1.current.value = '';
+    }
+
+    if (otp1 !== '' && numbersValidation(otp1) !== '' && otp2 === '') {
       input2.current.focus();
     }
-    if (otp1 !== '' && otp2 !== '' && otp3 === '') {
-      input3.current.focus();
+
+    if (numbersValidation(otp2) === '') {
+      setOtp2('');
+      input2.current.value = '';
     }
-    if (otp1 !== '' && otp2 !== '' && otp3 !== '' && otp4 === '') {
-      input4.current.focus();
-    }
+
     if (
       otp1 !== '' &&
+      numbersValidation(otp1) !== '' &&
       otp2 !== '' &&
+      numbersValidation(otp2) !== '' &&
+      otp3 === ''
+    ) {
+      input3.current.focus();
+    }
+
+    if (numbersValidation(otp3) === '') {
+      setOtp3('');
+      input3.current.value = '';
+    }
+
+    if (
+      otp1 !== '' &&
+      numbersValidation(otp1) !== '' &&
+      otp2 !== '' &&
+      numbersValidation(otp2) !== '' &&
       otp3 !== '' &&
+      numbersValidation(otp3) !== '' &&
+      otp4 === ''
+    ) {
+      input4.current.focus();
+    }
+
+    if (numbersValidation(otp4) === '') {
+      setOtp4('');
+      input4.current.value = '';
+    }
+
+    if (
+      otp1 !== '' &&
+      numbersValidation(otp1) !== '' &&
+      otp2 !== '' &&
+      numbersValidation(otp2) !== '' &&
+      otp3 !== '' &&
+      numbersValidation(otp3) !== '' &&
       otp4 !== '' &&
+      numbersValidation(otp4) !== '' &&
       otp5 === ''
     ) {
       input5.current.focus();
     }
+
+    if (numbersValidation(otp5) === '') {
+      setOtp5('');
+      input5.current.value = '';
+    }
+
     if (
       otp1 !== '' &&
+      numbersValidation(otp1) !== '' &&
       otp2 !== '' &&
+      numbersValidation(otp2) !== '' &&
       otp3 !== '' &&
+      numbersValidation(otp3) !== '' &&
       otp4 !== '' &&
+      numbersValidation(otp4) !== '' &&
       otp5 !== '' &&
+      numbersValidation(otp5) !== '' &&
       otp6 === ''
     ) {
       input6.current.focus();
+    }
+
+    if (numbersValidation(otp6) === '') {
+      setOtp6('');
+      input6.current.value = '';
     }
   }, [otp1, otp2, otp3, otp4, otp5, otp6]);
 
@@ -133,8 +192,16 @@ export const CreditOtp = () => {
     <>
       <S.Container>
         <div className="d-flex">
-          <S.BannerImage>
+          <S.BannerImage className="d-flex justify-content-between">
             <S.ImgDifierelo />
+            <div className="d-flex justify-content-end align-content-center">
+              <a className="px-2">
+                <img src="../icons/question.svg" />
+              </a>
+              <a href="/credit/credit-history">
+                <img src="../icons/close.svg" />
+              </a>
+            </div>
           </S.BannerImage>
         </div>
         <div className="d-flex">
@@ -221,7 +288,7 @@ export const CreditOtp = () => {
             </S.DivOtpResend>
           </div>
         </S.DivValidation>
-        <div className="d-flex justify-content-center pt-5">
+        <div className="d-flex justify-content-center pt-4">
           <Button text="Continuar" handleClick={sendData} disabled={clasBtn} />
         </div>
       </S.Container>

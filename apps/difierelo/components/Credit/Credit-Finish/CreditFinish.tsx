@@ -35,7 +35,7 @@ export const CreditFinish = () => {
             <S.TextAmpount>{amount}</S.TextAmpount>
           </div>
         </div>
-        <div className="d-flex justify-content-center pt-4 mx-5">
+        <div className="d-flex justify-content-center pt-5 mx-5">
           <Button
             text="Aceptar"
             handleClick={sendData}
@@ -43,7 +43,7 @@ export const CreditFinish = () => {
             loading={isLoading}
           />
         </div>
-        <div className="d-flex flex-column mx-5">
+        <div className="d-flex flex-column mx-5 pt-5">
           <div className="d-flex">
             <S.TextConditions>
               Recuerda que podrás utilizar tu crédito en los negocios afiliados

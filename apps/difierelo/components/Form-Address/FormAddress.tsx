@@ -50,7 +50,7 @@ export const FormAddress = () => {
 
   return (
     <S.Container>
-      <div className="d-flex pt-5">
+      <div className="d-flex pt-3">
         <S.TextTitle>¿Cúal es tu dirección?</S.TextTitle>
       </div>
       <div className="d-flex">
@@ -59,19 +59,53 @@ export const FormAddress = () => {
         </S.TextSubtitle>
       </div>
       <S.ContainerInputs className="row">
-        <Input
-          type="text"
-          placeholder="País"
-          value={country}
-          handleChange={setCountry}
-        />
+        <div className="input-group">
+          <S.FormSelect
+            className="form-control mb-2"
+            onChange={(e: any) => setCountry(e.target.value)}
+          >
+            <option value={''} disabled selected>
+              País
+            </option>
+            <option value={'Ec'}>Ecuador</option>
+          </S.FormSelect>
+        </div>
+
         <div className="w-50">
-          <Input
-            type="text"
-            placeholder="Provincia/Estado"
-            value={stateCountry}
-            handleChange={setStateCountry}
-          />
+          <div className="input-group">
+            <S.FormSelect
+              className="form-control mb-2"
+              onChange={(e: any) => setStateCountry(e.target.value)}
+            >
+              <option value={''} disabled selected>
+                Provincia/Estado
+              </option>
+              <option value={'1'}>Azuay</option>
+              <option value={'2'}>Bolívar</option>
+              <option value={'3'}>Cañar</option>
+              <option value={'4'}>Carchi</option>
+              <option value={'5'}>Chimborazo</option>
+              <option value={'6'}>Cotopaxi</option>
+              <option value={'7'}>El Oro</option>
+              <option value={'8'}>Esmeraldas</option>
+              <option value={'9'}>Galápagos</option>
+              <option value={'10'}>Guayas</option>
+              <option value={'11'}>Imbabura</option>
+              <option value={'12'}>Loja</option>
+              <option value={'13'}>Los Ríos</option>
+              <option value={'14'}>Manabí</option>
+              <option value={'15'}>Morona Santiago</option>
+              <option value={'16'}>Napo</option>
+              <option value={'17'}>Sucumbíos</option>
+              <option value={'18'}>Pastaza</option>
+              <option value={'19'}>Pinchincha</option>
+              <option value={'20'}>Santa Elena</option>
+              <option value={'21'}>Santo Domingo</option>
+              <option value={'22'}>Francisco De Orellana</option>
+              <option value={'23'}>Tungurahua</option>
+              <option value={'24'}>Zamora Chinchipe</option>
+            </S.FormSelect>
+          </div>
         </div>
         <div className="w-50">
           <Input

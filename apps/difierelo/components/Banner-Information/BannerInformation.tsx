@@ -40,7 +40,10 @@ const BannerInformation: React.FunctionComponent = () => {
         <div className="d-flex">
           <div className="col-md-6">
             <S.BannerText>
-              <S.ImgDifierelo />
+              <S.ImgDifierelo
+                className="btn"
+                onClick={() => router.push('/')}
+              />
               <S.TextTitle>
                 <S.Title>Compra ahora y paga después</S.Title>
               </S.TextTitle>

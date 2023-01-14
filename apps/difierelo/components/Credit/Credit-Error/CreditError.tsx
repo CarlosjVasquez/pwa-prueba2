@@ -33,7 +33,7 @@ export const CreditError = () => {
             </S.TextConditions>
           </div>
         </div>
-        <div className="d-flex justify-content-center pt-4 mx-5">
+        <div className="d-flex justify-content-center pt-5 mx-5">
           <Button
             text="Reintentar"
             handleClick={sendData}

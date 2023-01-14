@@ -44,11 +44,11 @@ export const ImgDifierelo = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 5.36vw;
+  width: 8.36vw;
   min-height: 1.46vw;
 
   ${Responsive.SM} {
-    width: 20.59vw;
+    width: 25.59vw;
     min-height: 5.6vw;
   }
 `;
@@ -174,11 +174,11 @@ export const PhoneInfo = styled.div`
 export const DivOtp = styled.div`
   min-height: 6.74vw;
   position: relative;
-  margin-top: 2.33vw;
+  margin-top: 1.33vw;
 
   ${Responsive.SM} {
     min-height: 25.87vw;
-    margin-top: 12.8vw;
+    margin-top: 4.8vw;
   }
 `;
 
@@ -204,14 +204,14 @@ export const TextOtp = styled.div`
 
 export const DivOtpInput = styled.div`
   min-height: 4.51vw;
-  position: absolute;
   margin-top: 1.11vw;
   margin-inline-start: 1.11vw;
 
   ${Responsive.SM} {
+    position: fixed;
     min-height: 17.33vw;
-    margin-top: 4.27vw;
-    margin-inline-start: 4.11vw;
+    margin-top: 2.27vw;
+    margin-inline-start: 0vw !important;
   }
 `;
 
@@ -244,11 +244,11 @@ export const OtpInput = styled.input`
 export const DivOtpResend = styled.div`
   min-height: 2.92vw;
   position: relative;
-  margin-top: 3.47vw;
+  margin-top: 2.47vw;
 
   ${Responsive.SM} {
     min-height: 11.2vw;
-    margin-top: 8.33vw;
+    margin-top: 4.33vw;
   }
 `;
 

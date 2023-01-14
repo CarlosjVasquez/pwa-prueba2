@@ -24,7 +24,7 @@ export const ImgNav = styled.div`
   position: sticky;
 
   ${Responsive.SM} {
-    width: 59.47vw;
+    width: 57.47vw;
     min-height: 46.4vw;
     position: sticky;
     margin-left: 10.56vw;
@@ -37,16 +37,22 @@ export const BannerText = styled.div`
   margin-inline-start: 4.53vw;
 `;
 
+export const BannerIcons = styled.div`
+  ${Responsive.SM} {
+    width: 68vw;
+  }
+`;
+
 export const ImgDifierelo = styled.div`
   background: url(${imageBannerText.src});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 5.36vw;
+  width: 8.36vw;
   min-height: 1.46vw;
 
   ${Responsive.SM} {
-    width: 20.59vw;
+    width: 25.59vw;
     min-height: 5.6vw;
   }
 `;
@@ -81,5 +87,9 @@ export const Title = styled.p`
 `;
 
 export const DivButton = styled.div`
-  margin-inline-start: 4.53vw;
+  margin-inline-start: 6.53vw;
+
+  ${Responsive.SM} {
+    margin-inline-start: 5vw;
+  }
 `;

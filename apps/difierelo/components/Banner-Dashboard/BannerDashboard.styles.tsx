@@ -103,7 +103,7 @@ export const TextUser = styled.div`
   color: #050a39;
 
   ${Responsive.SM} {
-    padding-top: 2.95vw;
+    padding-top: 1.6vw;
     padding-bottom: 2.35vw;
 
     font-size: 2.78vw;
@@ -130,7 +130,7 @@ export const InfoDash1 = styled.div`
   height: 17vw;
 
   ${Responsive.SM} {
-    width: 100%;
+    width: 90%;
     height: 40vw;
   }
 `;
@@ -167,7 +167,7 @@ export const InfoDash4 = styled.div`
   height: 20vw;
 
   ${Responsive.SM} {
-    width: 100%;
+    width: 90%;
     height: 40vw;
   }
 `;

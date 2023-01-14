@@ -27,12 +27,12 @@ export const TitleForm = styled.p`
   line-height: 2.71vw;
   letter-spacing: -0.02em;
   color: #11171d;
-  padding-top: 2vw;
+  padding-top: 0.5vw;
 
   ${Responsive.SM} {
     font-size: 7.47vw;
     line-height: 10.4vw;
-    padding-top: 6vw;
+    padding-top: 1vw;
   }
 `;
 
@@ -40,14 +40,14 @@ export const TextSubtitleForm = styled.div`
   width: 21.88vw;
   margin-inline-start: 3.67vw;
   margin-bottom: 1.39vw;
-  top: -1vw;
+  top: -1.5vw;
   position: relative;
 
   ${Responsive.SM} {
     width: 84vw;
     margin-inline-start: 4.53vw;
     margin-bottom: 5.33vw;
-    top: -3.47vw;
+    top: -7.47vw;
   }
 `;
 
@@ -66,16 +66,30 @@ export const SubtitleForm = styled.p`
 `;
 
 export const InfoCedulaForm = styled.div`
-  width: 22.15;
   min-height: 4.72vw;
   margin-inline-start: 3.67vw;
-  position: relative;
-  display: inline-flex;
+  display: flex;
+  margin-top: 0vw;
 
   ${Responsive.SM} {
     width: 38.4;
     min-height: 5.33vw;
     margin-inline-start: 4.53vw;
+    margin-top: 1vw;
+  }
+`;
+
+export const InfoCedulaForm1 = styled.div`
+  min-height: 4.72vw;
+  margin-inline-start: 3.67vw;
+  display: flex;
+  margin-top: -2.5vw;
+
+  ${Responsive.SM} {
+    width: 38.4;
+    min-height: 5.33vw;
+    margin-inline-start: 4.53vw;
+    margin-top: 0vw;
   }
 `;
 
@@ -95,11 +109,15 @@ export const IconCedula = styled.div`
 
 export const TextInfoDocs = styled.div`
   min-height: 1.11vw;
-  top: -2vw;
+  top: -3.5vw;
   align-items: center;
   align-content: center;
   position: relative;
   display: flex;
+
+  ${Responsive.SM} {
+    top: -10vw;
+  }
 `;
 
 export const IconPlanilla = styled.div`
@@ -138,17 +156,27 @@ export const TextInfoForm = styled.p`
 export const DivPhone = styled.div`
   width: 83.47vw;
   margin-inline-start: 3.67vw;
+  position: relative;
+  top: -4vw;
+
+  .form-control:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    background: #ffffff;
+  }
+
+  ${Responsive.SM} {
+    top: -6vw;
+  }
 `;
 
 export const DivPhoneLabel = styled.div`
   width: 7.43vw;
   min-height: 1.25vw;
-  margin-bottom: 0.69vw;
 
   ${Responsive.SM} {
     width: 28.53vw;
     min-height: 4.8vw;
-    margin-bottom: 2.67vw;
   }
 `;
 
@@ -169,20 +197,32 @@ export const PhoneLabel = styled.label`
 export const DivConditions = styled.div`
   width: 22.29vw;
   min-height: 6.25vw;
-  margin-top: 4.03vw;
+  margin-top: -4vw;
   margin-inline-start: 3.67vw;
 
   ${Responsive.SM} {
     width: 85.6vw;
     min-height: 24vw;
-    margin-top: 15.47vw;
+    margin-top: -2vw;
   }
 `;
 
 export const DivConditionsCheck = styled.div`
   width: 22.29vw;
   min-height: 3.33vw;
-  margin-bottom: 1.39vw;
+  margin-top: 1vw;
+
+  ${Responsive.SM} {
+    width: 85.6vw;
+    min-height: 12.8vw;
+  }
+`;
+
+export const DivConditionsCheck1 = styled.div`
+  width: 22.29vw;
+  min-height: 3.33vw;
+  margin-top: -1vw;
+  margin-bottom: 2vw;
 
   ${Responsive.SM} {
     width: 85.6vw;

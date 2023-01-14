@@ -53,12 +53,12 @@ export const TextSubtitle = styled.p`
 `;
 
 export const ContainerInfo = styled.div`
-  margin-top: 2.85vw;
-  margin-bottom: 2.43vw;
+  margin-top: 1.85vw;
+  margin-bottom: 1.43vw;
 
   ${Responsive.SM} {
-    margin-top: 5.13vw;
-    margin-bottom: 9.33vw;
+    margin-top: 3.13vw;
+    margin-bottom: 5.33vw;
   }
 `;
 

@@ -10,7 +10,7 @@ export const TextTitle = styled.div`
   z-index: 2;
 
   ${Responsive.SM} {
-    width: 100%;
+    width: 90%;
     min-height: 10.14vw;
     top: -7.73vw;
   }
@@ -40,7 +40,7 @@ export const TextSubtitle = styled.div`
   background: white;
 
   ${Responsive.SM} {
-    width: 100%;
+    width: 90%;
     min-height: 10.13vw;
     top: -7.73vw;
   }
@@ -69,7 +69,7 @@ export const DivInfo = styled.div`
   background: white;
 
   ${Responsive.SM} {
-    width: 100%;
+    width: 90%;
     min-height: 20.27vw;
   }
 `;
@@ -132,12 +132,12 @@ export const DivOtp = styled.div`
   margin-inline-start: 4.53vw;
   position: relative;
   background: white;
-  margin-top: 3.33vw;
+  margin-top: 1.33vw;
 
   ${Responsive.SM} {
-    width: 100%;
+    width: 90%;
     min-height: 25.87vw;
-    margin-top: 12.8vw;
+    margin-top: 1vw;
   }
 `;
 
@@ -155,7 +155,7 @@ export const TextOtp = styled.div`
   color: #11171d;
 
   ${Responsive.SM} {
-    width: 100%;
+    width: 90%;
     min-height: 4.27vw;
 
     //text
@@ -165,7 +165,7 @@ export const TextOtp = styled.div`
 `;
 
 export const DivOtpInput = styled.div`
-  width: 100%;
+  width: 90%;
   min-height: 4.51vw;
   position: relative;
   background: white;
@@ -176,6 +176,7 @@ export const DivOtpInput = styled.div`
   ${Responsive.SM} {
     min-height: 17.33vw;
     margin-top: 4.27vw;
+    margin-inline-start: -3vw !important;
   }
 `;
 
@@ -199,6 +200,7 @@ export const OtpInput = styled.input`
   ${Responsive.SM} {
     width: 12.53vw;
     min-height: 17.33vw;
+    margin-inline-end: 2vw;
 
     //text
     font-size: 7.47vw;
@@ -212,14 +214,14 @@ export const DivOtpResend = styled.div`
   margin-inline-start: 4.53vw;
   position: relative;
   background: white;
-  margin-top: 3.47vw;
-  margin-bottom: 2.22vw;
+  margin-top: 2vw;
+  margin-bottom: 1.22vw;
 
   ${Responsive.SM} {
-    width: 100%;
+    width: 90%;
     min-height: 11.2vw;
-    margin-top: 13.33vw;
-    margin-bottom: 8.53vw;
+    margin-top: 6.33vw;
+    margin-bottom: 4vw;
   }
 `;
 
@@ -238,7 +240,7 @@ export const OtpQuestion = styled.p`
   color: #11171d;
 
   ${Responsive.SM} {
-    width: 100%;
+    width: 90%;
     min-height: 4.27vw;
 
     //text
@@ -264,7 +266,7 @@ export const OtpResend = styled.a`
   text-decoration: none;
 
   ${Responsive.SM} {
-    width: 100%;
+    width: 90%;
     min-height: 4.8vw;
     margin-top: 2.13vw;
 

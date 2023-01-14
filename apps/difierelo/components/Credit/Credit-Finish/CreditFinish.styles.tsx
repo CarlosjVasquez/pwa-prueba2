@@ -29,11 +29,11 @@ export const ImgDifierelo = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 5.36vw;
+  width: 8.36vw;
   min-height: 1.46vw;
 
   ${Responsive.SM} {
-    width: 20.59vw;
+    width: 25.59vw;
     min-height: 5.6vw;
   }
 `;

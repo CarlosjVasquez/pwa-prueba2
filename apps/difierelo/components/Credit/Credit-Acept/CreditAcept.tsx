@@ -82,14 +82,14 @@ export const CreditAcept = () => {
               loading={isLoadingR}
             />
           </div>
-          <div className="d-flex w-50 p-2">
+          <S.BtnContinue className="d-flex w-50 p-2">
             <Button
               text="Aceptar"
               handleClick={sendData}
               disabled={false}
               loading={isLoading}
             />
-          </div>
+          </S.BtnContinue>
         </div>
         <div className="d-flex flex-column mx-5">
           <div className="d-flex">
