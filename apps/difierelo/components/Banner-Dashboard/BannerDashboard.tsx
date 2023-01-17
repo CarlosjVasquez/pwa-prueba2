@@ -67,7 +67,7 @@ export const BannerDashboard = () => {
               Tiendas afiliadas
             </S.TextSubtitle>
           </div>
-          <div className="w-100 d-flex">
+          <div className="d-flex">
             <DashboardStores />
           </div>
         </S.InfoDash4>

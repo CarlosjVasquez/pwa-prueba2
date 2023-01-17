@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import BannerTwo from '../components/BannerTwo';
 import BannerBuy from '../components/BannerBuy';
 import BannerBuyEasy from '../components/BannerBuyEasy';
+import Offers from '../components/Offers';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Business />
       <BannerTwo />
       <BannerBuy />
+      <Offers />
       <BannerBuyEasy />
     </Layout>
   );

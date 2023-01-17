@@ -20,6 +20,7 @@ export const CreditOtp = () => {
   const [otp4, setOtp4] = useState('');
   const [otp5, setOtp5] = useState('');
   const [otp6, setOtp6] = useState('');
+  const [counter, setCounter] = useState('');
   const input1 = useRef(null);
   const input2 = useRef(null);
   const input3 = useRef(null);
@@ -82,6 +83,10 @@ export const CreditOtp = () => {
       input2.current.value = '';
     }
 
+    if (numbersValidation(otp2) === '' && counter === 'Backspace') {
+      input1.current.focus();
+    }
+
     if (
       otp1 !== '' &&
       numbersValidation(otp1) !== '' &&
@@ -95,6 +100,17 @@ export const CreditOtp = () => {
     if (numbersValidation(otp3) === '') {
       setOtp3('');
       input3.current.value = '';
+    }
+
+    if (
+      numbersValidation(otp2) !== '' &&
+      numbersValidation(otp3) === '' &&
+      numbersValidation(otp4) === '' &&
+      numbersValidation(otp5) === '' &&
+      numbersValidation(otp6) === '' &&
+      counter === 'Backspace'
+    ) {
+      input2.current.focus();
     }
 
     if (
@@ -112,6 +128,16 @@ export const CreditOtp = () => {
     if (numbersValidation(otp4) === '') {
       setOtp4('');
       input4.current.value = '';
+    }
+
+    if (
+      numbersValidation(otp3) !== '' &&
+      numbersValidation(otp4) === '' &&
+      numbersValidation(otp5) === '' &&
+      numbersValidation(otp6) === '' &&
+      counter === 'Backspace'
+    ) {
+      input3.current.focus();
     }
 
     if (
@@ -134,6 +160,15 @@ export const CreditOtp = () => {
     }
 
     if (
+      numbersValidation(otp4) !== '' &&
+      numbersValidation(otp5) === '' &&
+      numbersValidation(otp6) === '' &&
+      counter === 'Backspace'
+    ) {
+      input4.current.focus();
+    }
+
+    if (
       otp1 !== '' &&
       numbersValidation(otp1) !== '' &&
       otp2 !== '' &&
@@ -152,6 +187,14 @@ export const CreditOtp = () => {
     if (numbersValidation(otp6) === '') {
       setOtp6('');
       input6.current.value = '';
+    }
+
+    if (
+      numbersValidation(otp6) === '' &&
+      numbersValidation(otp5) !== '' &&
+      counter === 'Backspace'
+    ) {
+      input5.current.focus();
     }
   }, [otp1, otp2, otp3, otp4, otp5, otp6]);
 
@@ -240,36 +283,42 @@ export const CreditOtp = () => {
                   id="txtOtp1"
                   type={'text'}
                   onChange={(e: any) => setOtp1(e.target.value)}
+                  onKeyDown={(e: any) => setCounter(e.code)}
                   maxLength={1}
                   ref={input1}
                 />
                 <S.OtpInput
                   type={'text'}
                   onChange={(e: any) => setOtp2(e.target.value)}
+                  onKeyDown={(e: any) => setCounter(e.code)}
                   maxLength={1}
                   ref={input2}
                 />
                 <S.OtpInput
                   type={'text'}
                   onChange={(e: any) => setOtp3(e.target.value)}
+                  onKeyDown={(e: any) => setCounter(e.code)}
                   maxLength={1}
                   ref={input3}
                 />
                 <S.OtpInput
                   type={'text'}
                   onChange={(e: any) => setOtp4(e.target.value)}
+                  onKeyDown={(e: any) => setCounter(e.code)}
                   maxLength={1}
                   ref={input4}
                 />
                 <S.OtpInput
                   type={'text'}
                   onChange={(e: any) => setOtp5(e.target.value)}
+                  onKeyDown={(e: any) => setCounter(e.code)}
                   maxLength={1}
                   ref={input5}
                 />
                 <S.OtpInput
                   type={'text'}
                   onChange={(e: any) => setOtp6(e.target.value)}
+                  onKeyDown={(e: any) => setCounter(e.code)}
                   maxLength={1}
                   ref={input6}
                 />
