@@ -22,7 +22,7 @@ export const DivCardStore = styled.div`
   margin-inline-end: 2.43vw;
 
   ${Responsive.SM} {
-    width: 30vw !important;
+    width: 85vw !important;
     margin-inline-end: 6.6vw;
   }
 `;

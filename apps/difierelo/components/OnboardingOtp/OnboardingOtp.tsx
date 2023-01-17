@@ -15,6 +15,7 @@ export interface OnboardingOtpProps {
   input4: any;
   input5: any;
   input6: any;
+  setCounter: (e: any) => void;
 }
 
 export const OnboardingOtp = (props: OnboardingOtpProps) => {
@@ -72,36 +73,42 @@ export const OnboardingOtp = (props: OnboardingOtpProps) => {
             id="txtOtp1"
             type={'text'}
             onChange={(e: any) => props.setOtp1(e.target.value)}
+            onKeyDown={(e: any) => props.setCounter(e.code)}
             maxLength={1}
             ref={props.input1}
           />
           <S.OtpInput
             type={'text'}
             onChange={(e: any) => props.setOtp2(e.target.value)}
+            onKeyDown={(e: any) => props.setCounter(e.code)}
             maxLength={1}
             ref={props.input2}
           />
           <S.OtpInput
             type={'text'}
             onChange={(e: any) => props.setOtp3(e.target.value)}
+            onKeyDown={(e: any) => props.setCounter(e.code)}
             maxLength={1}
             ref={props.input3}
           />
           <S.OtpInput
             type={'text'}
             onChange={(e: any) => props.setOtp4(e.target.value)}
+            onKeyDown={(e: any) => props.setCounter(e.code)}
             maxLength={1}
             ref={props.input4}
           />
           <S.OtpInput
             type={'text'}
             onChange={(e: any) => props.setOtp5(e.target.value)}
+            onKeyDown={(e: any) => props.setCounter(e.code)}
             maxLength={1}
             ref={props.input5}
           />
           <S.OtpInput
             type={'text'}
             onChange={(e: any) => props.setOtp6(e.target.value)}
+            onKeyDown={(e: any) => props.setCounter(e.code)}
             maxLength={1}
             ref={props.input6}
           />
