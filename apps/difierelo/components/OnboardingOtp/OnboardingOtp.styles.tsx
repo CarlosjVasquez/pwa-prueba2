@@ -189,12 +189,12 @@ export const OtpInput = styled.input`
   border-radius: 0.42vw;
 
   input[type='number'] {
-    -moz-appearance: textfield;
+    -moz-appearance: textfield !important;
   }
 
   input[type='number']::-webkit-inner-spin-button,
   input[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+    -webkit-appearance: none !important;
   }
 
   //text

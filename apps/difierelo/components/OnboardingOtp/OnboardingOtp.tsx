@@ -71,11 +71,12 @@ export const OnboardingOtp = (props: OnboardingOtpProps) => {
         <S.DivOtpInput>
           <S.OtpInput
             id="txtOtp1"
-            type={'text'}
+            type={'number'}
             onChange={(e: any) => props.setOtp1(e.target.value)}
             onKeyDown={(e: any) => props.setCounter(e.code)}
             maxLength={1}
             ref={props.input1}
+            style={{ WebkitAppearance: 'none', MozAppearance: 'textfield' }}
           />
           <S.OtpInput
             type={'text'}
