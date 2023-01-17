@@ -67,7 +67,7 @@ export const AmountLabel = styled.label`
   font-style: normal;
   font-weight: 600;
   color: #11171d;
-  font-size: 1.94vw;
+  font-size: 2.94vw;
   line-height: 2.36vw;
 
   ${Responsive.SM} {
@@ -75,7 +75,7 @@ export const AmountLabel = styled.label`
     border-radius: 1.04vw;
 
     //text
-    font-size: 4.86vw;
+    font-size: 6.86vw;
     line-height: 5.9vw;
   }
 `;
@@ -132,12 +132,12 @@ export const TextNumber = styled.h1`
   font-family: Eina 02;
   font-style: normal;
   font-weight: 600;
-  font-size: 1.53vw;
+  font-size: 2.53vw;
   line-height: 2.36vw;
   color: #170658;
 
   ${Responsive.SM} {
-    font-size: 4.86vw;
+    font-size: 6.86vw;
     line-height: 5.9vw;
   }
 `;

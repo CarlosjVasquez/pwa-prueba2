@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import * as S from './CreditAcept.styles';
-import { currencyFormatter } from '../../../utils/Formats';
+import { currencyFormatter, onlyNumber } from '../../../utils/Formats';
 import Button from '../../Button';
 import ButtonReturn from '../../Button-Return';
 import { useState } from 'react';
@@ -14,13 +14,27 @@ export const CreditAcept = () => {
 
   const sendData = () => {
     setIsLoading(true);
-    if (amountR === '0') {
+    const aux = onlyNumber(amount);
+    const aux1 = aux.replace(',', '');
+    const auxR = onlyNumber(amountR);
+    const auxR1 = auxR.replace(',', '');
+    const prev = localStorage.getItem('userM');
+    const aprev = onlyNumber(prev);
+    const aprev1 = aprev.replace(',', '');
+
+    if (parseInt(auxR1) === 0) {
+      const total = parseInt(aprev1) + parseInt(aux1);
+      localStorage.setItem(
+        'userM',
+        currencyFormatter({ currency: 'USD', value: total.toString() })
+      );
       router.push('/credit/credit-success');
     }
-    if (amountR !== '0') {
+    if (parseInt(auxR1) !== 0) {
+      const total = parseInt(aprev1) + parseInt(auxR1);
       localStorage.setItem(
-        'amount',
-        currencyFormatter({ currency: 'USD', value: amountR })
+        'userM',
+        currencyFormatter({ currency: 'USD', value: total.toString() })
       );
       router.push('/credit/credit-success');
     }
@@ -28,9 +42,11 @@ export const CreditAcept = () => {
 
   const rejectMoney = () => {
     setIsLoadingR(true);
+    const prev = localStorage.getItem('userM');
+    const total = onlyNumber(prev);
     localStorage.setItem(
       'amount',
-      currencyFormatter({ currency: 'USD', value: '0.00' })
+      currencyFormatter({ currency: 'USD', value: total })
     );
     router.push('/dashboard');
   };
@@ -58,14 +74,14 @@ export const CreditAcept = () => {
           </div>
           <div className="d-flex justify-content-center pt-3">
             <S.TextAmpount>
-              {amountR !== '0'
+              {parseInt(onlyNumber(amountR)) !== 0
                 ? currencyFormatter({ currency: 'USD', value: amountR })
                 : amount}
             </S.TextAmpount>
           </div>
         </div>
         <div className="d-flex justify-content-start mx-5 pt-5">
-          {amountR !== '0' && (
+          {parseInt(onlyNumber(amountR)) !== 0 && (
             <div className="d-flex justify-content-start mx-2">
               <S.TextConditions>
                 {'Tu solicitud fue de: ' + amount}

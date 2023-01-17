@@ -1,7 +1,7 @@
 import * as S from './DashboardBalance.styles';
 
 export const DashboardBalance = () => {
-  const saldo = localStorage.getItem('amount');
+  const saldo = localStorage.getItem('userM');
   return (
     <>
       <S.DivCard className="card">

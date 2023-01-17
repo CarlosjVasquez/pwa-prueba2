@@ -3,6 +3,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import FormEntries from '../../Form-Entries';
 
 export const CreditEntries = () => {
+  localStorage.setItem('userM', localStorage.getItem('amount'));
   return (
     <>
       <S.Container>

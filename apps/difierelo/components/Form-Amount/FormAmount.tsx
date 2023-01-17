@@ -102,7 +102,7 @@ export const FormAmount = () => {
       <div className="d-flex pt-4">
         <S.DivLine className="w-100"></S.DivLine>
       </div>
-      <S.DivNumbers className="row">
+      <S.DivNumbers className="row mx-4">
         <div className="d-flex pt-3 justify-content-between">
           <div className="btn" onClick={() => addNumber(1)}>
             <S.TextNumber>1</S.TextNumber>
@@ -148,7 +148,7 @@ export const FormAmount = () => {
           </S.DivDelete>
         </div>
       </S.DivNumbers>
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center pt-3">
         <Button
           text="Continuar"
           handleClick={sendData}

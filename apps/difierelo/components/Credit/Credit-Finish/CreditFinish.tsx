@@ -1,14 +1,42 @@
+import { onlyNumber, currencyFormatter } from '../../../utils/Formats';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from '../../Button';
 import * as S from './CreditFinish.styles';
 
 export const CreditFinish = () => {
-  const amount = localStorage.getItem('amount');
+  let amount = localStorage.getItem('amount');
+  const amountR = localStorage.getItem('amountReduce');
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
+  const auxR = onlyNumber(amountR);
+  const auxR1 = auxR.replace(',', '');
+
+  if (parseInt(auxR1) !== 0) {
+    amount = currencyFormatter({ currency: 'USD', value: auxR1.toString() });
+  }
+
   const sendData = () => {
+    let total = 0;
+    const prev = localStorage.getItem('userM');
+    const auxA = onlyNumber(prev);
+    const auxB = auxA.replace(',', '');
+    const auxR = onlyNumber(amountR);
+    const auxR1 = auxR.replace(',', '');
+    if (parseInt(auxR1) === 0) {
+      total = parseInt(auxB) + parseInt(auxR1);
+    }
+    if (parseInt(auxR1) !== 0) {
+      const auxA = onlyNumber(amount);
+      const auxB = auxA.replace(',', '');
+      total = parseInt(auxB) + parseInt(auxB);
+    }
+
+    localStorage.setItem(
+      'amount',
+      currencyFormatter({ currency: 'USD', value: total.toString() })
+    );
     setIsLoading(true);
     router.push('/dashboard');
   };
@@ -37,7 +65,7 @@ export const CreditFinish = () => {
         </div>
         <div className="d-flex justify-content-center pt-5 mx-5">
           <Button
-            text="Aceptar"
+            text="Comprar Ahora"
             handleClick={sendData}
             disabled={false}
             loading={isLoading}
