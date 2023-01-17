@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import * as S from './ModalRequest.styles';
+import { onlyNumber } from '../../utils/Formats';
 
 export interface ModalRequestProps {
   title: string;
@@ -12,24 +13,43 @@ export interface ModalRequestProps {
 
 export const ModalRequest = (props: ModalRequestProps) => {
   useEffect(() => {
-    if (props.loading && props.result === 1) {
+    const valor = localStorage.getItem('amount');
+    const a = onlyNumber(valor);
+    const aux = a.replace(',', '');
+    let aprove = 0;
+
+    if (parseInt(aux) <= 600) {
+      aprove = 1;
+    }
+
+    if (parseInt(aux) > 600 && parseInt(aux) <= 1200) {
+      aprove = 2;
+    }
+
+    if (parseInt(aux) > 1200) {
+      aprove = 3;
+    }
+
+    console.log('valor', parseInt(aux));
+
+    if (props.loading && aprove === 1) {
       setTimeout(() => {
-        props.onContinue(props.result);
-        localStorage.setItem('amountReduce', '0');
+        props.onContinue(aprove);
+        localStorage.setItem('amountReduce', '$0.00');
       }, 2000);
     }
 
-    if (props.loading && props.result === 2) {
+    if (props.loading && aprove === 2) {
       setTimeout(() => {
-        props.onContinue(props.result);
-        localStorage.setItem('amountReduce', '400');
+        props.onContinue(aprove);
+        localStorage.setItem('amountReduce', '$900.00');
       }, 3000);
     }
 
-    if (props.loading && props.result === 3) {
+    if (props.loading && aprove === 3) {
       setTimeout(() => {
-        props.onContinue(props.result);
-        localStorage.setItem('amount', '$0.00');
+        props.onContinue(aprove);
+        localStorage.setItem('amountReduce', '$0.00');
       }, 4000);
     }
   }, []);
