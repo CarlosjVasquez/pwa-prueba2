@@ -171,6 +171,8 @@ export const BannerOtp = () => {
         router.push('/personal-data');
       }
       if (localStorage.getItem('login') === 'true') {
+        localStorage.setItem('userM', '$850.00');
+        localStorage.setItem('amount', '$850.00');
         router.push('/dashboard');
       }
     }
