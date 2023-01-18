@@ -188,15 +188,6 @@ export const OtpInput = styled.input`
   border: 1px solid #e2e8f0;
   border-radius: 0.42vw;
 
-  input[type='number'] {
-    -moz-appearance: textfield !important;
-  }
-
-  input[type='number']::-webkit-inner-spin-button,
-  input[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: none !important;
-  }
-
   //text
   font-family: Eina 02;
   font-style: normal;

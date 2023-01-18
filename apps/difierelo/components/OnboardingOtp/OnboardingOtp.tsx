@@ -71,12 +71,12 @@ export const OnboardingOtp = (props: OnboardingOtpProps) => {
         <S.DivOtpInput>
           <S.OtpInput
             id="txtOtp1"
-            type={'number'}
+            type="text"
             onChange={(e: any) => props.setOtp1(e.target.value)}
             onKeyDown={(e: any) => props.setCounter(e.code)}
             maxLength={1}
             ref={props.input1}
-            style={{ WebkitAppearance: 'none', MozAppearance: 'textfield' }}
+            pattern="[0-9]*"
           />
           <S.OtpInput
             type={'text'}
@@ -84,6 +84,7 @@ export const OnboardingOtp = (props: OnboardingOtpProps) => {
             onKeyDown={(e: any) => props.setCounter(e.code)}
             maxLength={1}
             ref={props.input2}
+            pattern="[0-9]*"
           />
           <S.OtpInput
             type={'text'}
@@ -91,6 +92,7 @@ export const OnboardingOtp = (props: OnboardingOtpProps) => {
             onKeyDown={(e: any) => props.setCounter(e.code)}
             maxLength={1}
             ref={props.input3}
+            pattern="[0-9]*"
           />
           <S.OtpInput
             type={'text'}
@@ -98,6 +100,7 @@ export const OnboardingOtp = (props: OnboardingOtpProps) => {
             onKeyDown={(e: any) => props.setCounter(e.code)}
             maxLength={1}
             ref={props.input4}
+            pattern="[0-9]*"
           />
           <S.OtpInput
             type={'text'}
@@ -105,6 +108,7 @@ export const OnboardingOtp = (props: OnboardingOtpProps) => {
             onKeyDown={(e: any) => props.setCounter(e.code)}
             maxLength={1}
             ref={props.input5}
+            pattern="[0-9]*"
           />
           <S.OtpInput
             type={'text'}
@@ -112,6 +116,7 @@ export const OnboardingOtp = (props: OnboardingOtpProps) => {
             onKeyDown={(e: any) => props.setCounter(e.code)}
             maxLength={1}
             ref={props.input6}
+            pattern="[0-9]*"
           />
         </S.DivOtpInput>
       </S.DivOtp>
