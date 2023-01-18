@@ -73,50 +73,56 @@ export const OnboardingOtp = (props: OnboardingOtpProps) => {
             id="txtOtp1"
             type="text"
             onChange={(e: any) => props.setOtp1(e.target.value)}
-            onKeyDown={(e: any) => props.setCounter(e.code)}
+            onKeyDown={(e: any) => props.setCounter(e)}
             maxLength={1}
             ref={props.input1}
             pattern="[0-9]*"
+            tabIndex={1}
           />
           <S.OtpInput
             type={'text'}
             onChange={(e: any) => props.setOtp2(e.target.value)}
-            onKeyDown={(e: any) => props.setCounter(e.code)}
+            onKeyDown={(e: any) => props.setCounter(e)}
             maxLength={1}
             ref={props.input2}
             pattern="[0-9]*"
+            tabIndex={2}
           />
           <S.OtpInput
             type={'text'}
             onChange={(e: any) => props.setOtp3(e.target.value)}
-            onKeyDown={(e: any) => props.setCounter(e.code)}
+            onKeyDown={(e: any) => props.setCounter(e)}
             maxLength={1}
             ref={props.input3}
             pattern="[0-9]*"
+            tabIndex={3}
           />
           <S.OtpInput
             type={'text'}
             onChange={(e: any) => props.setOtp4(e.target.value)}
-            onKeyDown={(e: any) => props.setCounter(e.code)}
+            onKeyDown={(e: any) => props.setCounter(e)}
             maxLength={1}
             ref={props.input4}
             pattern="[0-9]*"
+            tabIndex={4}
           />
           <S.OtpInput
             type={'text'}
             onChange={(e: any) => props.setOtp5(e.target.value)}
-            onKeyDown={(e: any) => props.setCounter(e.code)}
+            onKeyDown={(e: any) => props.setCounter(e)}
             maxLength={1}
             ref={props.input5}
             pattern="[0-9]*"
+            tabIndex={5}
           />
           <S.OtpInput
             type={'text'}
             onChange={(e: any) => props.setOtp6(e.target.value)}
-            onKeyDown={(e: any) => props.setCounter(e.code)}
+            onKeyDown={(e: any) => props.setCounter(e)}
             maxLength={1}
             ref={props.input6}
             pattern="[0-9]*"
+            tabIndex={6}
           />
         </S.DivOtpInput>
       </S.DivOtp>

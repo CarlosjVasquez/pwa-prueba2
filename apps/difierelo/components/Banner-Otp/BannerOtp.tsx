@@ -14,7 +14,6 @@ export const BannerOtp = () => {
   const [otp4, setOtp4] = useState('');
   const [otp5, setOtp5] = useState('');
   const [otp6, setOtp6] = useState('');
-  const [counter, setCounter] = useState('');
   const router = useRouter();
   const input1 = useRef(null);
   const input2 = useRef(null);
@@ -57,10 +56,6 @@ export const BannerOtp = () => {
       input2.current.value = '';
     }
 
-    if (numbersValidation(otp2) === '' && counter === 'Backspace') {
-      input1.current.focus();
-    }
-
     if (
       otp1 !== '' &&
       numbersValidation(otp1) !== '' &&
@@ -74,17 +69,6 @@ export const BannerOtp = () => {
     if (numbersValidation(otp3) === '') {
       setOtp3('');
       input3.current.value = '';
-    }
-
-    if (
-      numbersValidation(otp2) !== '' &&
-      numbersValidation(otp3) === '' &&
-      numbersValidation(otp4) === '' &&
-      numbersValidation(otp5) === '' &&
-      numbersValidation(otp6) === '' &&
-      counter === 'Backspace'
-    ) {
-      input2.current.focus();
     }
 
     if (
@@ -102,16 +86,6 @@ export const BannerOtp = () => {
     if (numbersValidation(otp4) === '') {
       setOtp4('');
       input4.current.value = '';
-    }
-
-    if (
-      numbersValidation(otp3) !== '' &&
-      numbersValidation(otp4) === '' &&
-      numbersValidation(otp5) === '' &&
-      numbersValidation(otp6) === '' &&
-      counter === 'Backspace'
-    ) {
-      input3.current.focus();
     }
 
     if (
@@ -134,15 +108,6 @@ export const BannerOtp = () => {
     }
 
     if (
-      numbersValidation(otp4) !== '' &&
-      numbersValidation(otp5) === '' &&
-      numbersValidation(otp6) === '' &&
-      counter === 'Backspace'
-    ) {
-      input4.current.focus();
-    }
-
-    if (
       otp1 !== '' &&
       numbersValidation(otp1) !== '' &&
       otp2 !== '' &&
@@ -162,15 +127,34 @@ export const BannerOtp = () => {
       setOtp6('');
       input6.current.value = '';
     }
-
-    if (
-      numbersValidation(otp6) === '' &&
-      numbersValidation(otp5) !== '' &&
-      counter === 'Backspace'
-    ) {
-      input5.current.focus();
-    }
   }, [otp1, otp2, otp3, otp4, otp5, otp6]);
+
+  const backSpace = (e: any) => {
+    const target = e.target as HTMLInputElement;
+    if (e.key === 'Backspace' && target.value === '' && target.tabIndex) {
+      const previdno = target.tabIndex - 1;
+
+      if (previdno && !isNaN(+target.value) && target.tabIndex === 6) {
+        input5.current.focus();
+      }
+
+      if (previdno && !isNaN(+target.value) && target.tabIndex === 5) {
+        input4.current.focus();
+      }
+
+      if (previdno && !isNaN(+target.value) && target.tabIndex === 4) {
+        input3.current.focus();
+      }
+
+      if (previdno && !isNaN(+target.value) && target.tabIndex === 3) {
+        input2.current.focus();
+      }
+
+      if (previdno && !isNaN(+target.value) && target.tabIndex === 2) {
+        input1.current.focus();
+      }
+    }
+  };
 
   const validateOtp = () => {
     if (
@@ -232,7 +216,7 @@ export const BannerOtp = () => {
           input4={input4}
           input5={input5}
           input6={input6}
-          setCounter={setCounter}
+          setCounter={backSpace}
         />
         <S.DivButton>
           <Button
@@ -246,3 +230,6 @@ export const BannerOtp = () => {
   );
 };
 export default BannerOtp;
+function useForm(arg0: { mode: string }) {
+  throw new Error('Function not implemented.');
+}
