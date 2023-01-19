@@ -9,7 +9,6 @@ export const InfoPay = styled.div`
 
   ${Responsive.SM} {
     margin-top: 2vw;
-    margin-inline-start: 0vw !important;
     width: 100%;
     left: 0;
   }

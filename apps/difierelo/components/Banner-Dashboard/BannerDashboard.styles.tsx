@@ -41,7 +41,7 @@ export const CreditButton = styled.button`
   background: #4544ed;
   border: none;
   border-radius: 0.56vw;
-  margin-left: 3.47vw;
+  margin-left: 5.4vw;
 
   font-family: Eina 02;
   font-style: normal;
@@ -155,7 +155,7 @@ export const InfoDash3 = styled.div`
   height: 20vw;
 
   ${Responsive.SM} {
-    width: 90%;
+    width: 95%;
     height: 40vw;
   }
 `;
@@ -241,6 +241,7 @@ export const PayButton = styled.button`
   background: #4544ed;
   border: none;
   border-radius: 0.56vw;
+  margin-inline-end: 2vw;
 
   font-family: Eina 02;
   font-style: normal;
@@ -255,6 +256,7 @@ export const PayButton = styled.button`
     width: 22.92vw;
     height: 9.38vw;
     border-radius: 1.39vw;
+    margin-inline-end: -3.5vw;
 
     font-size: 2.78vw;
     line-height: 3.82vw;
