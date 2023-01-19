@@ -1,5 +1,5 @@
 import * as S from './FormLogin.styles';
-import PhoneInput, { CountryData } from 'react-phone-input-2';
+import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import Button from '../Button';
 import { useEffect, useState } from 'react';
@@ -12,8 +12,16 @@ export const FormLogin = () => {
   const router = useRouter();
 
   const phoneNumber = (phone: any) => {
-    if (phone.length === 12) {
-      setValue(phone);
+    if (phone.length === 12 || phone.length === 13) {
+      const auxNumber1 = phone.slice(3, 4);
+      if (auxNumber1 === '0') {
+        setValue(phone.slice(0, 3) + phone.slice(4, 13));
+      } else {
+        setValue(phone);
+      }
+    }
+    if (phone.length > 13) {
+      setValue('+593');
     }
   };
 
@@ -47,7 +55,7 @@ export const FormLogin = () => {
             <S.TextPhone>Ingresa tu celular</S.TextPhone>
             <PhoneInput
               country={'ec'}
-              value=""
+              value={value}
               onChange={(e: any) => phoneNumber(e)}
               searchPlaceholder="search"
             />

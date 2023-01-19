@@ -14,6 +14,7 @@ export const BannerOtp = () => {
   const [otp4, setOtp4] = useState('');
   const [otp5, setOtp5] = useState('');
   const [otp6, setOtp6] = useState('');
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const input1 = useRef(null);
   const input2 = useRef(null);
@@ -167,6 +168,7 @@ export const BannerOtp = () => {
     ) {
       const otpArray = otp1 + otp2 + otp3 + otp4 + otp5 + otp6;
       console.log('otpArray', otpArray);
+      setLoading(true);
       if (localStorage.getItem('login') === 'false') {
         router.push('/personal-data');
       }
@@ -225,6 +227,7 @@ export const BannerOtp = () => {
             disabled={clasBtn}
             text="Continuar"
             handleClick={validateOtp}
+            loading={loading}
           />
         </S.DivButton>
       </S.Container>

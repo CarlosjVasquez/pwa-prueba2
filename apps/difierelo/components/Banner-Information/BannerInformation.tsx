@@ -14,6 +14,20 @@ const BannerInformation: React.FunctionComponent = () => {
   const router = useRouter();
 
   useEffect(() => {
+    if (value.length === 12 || value.length === 13) {
+      const auxNumber1 = value.slice(3, 4);
+      if (auxNumber1 === '0') {
+        setValue(value.slice(0, 3) + value.slice(4, 13));
+      } else {
+        setValue(value);
+      }
+    }
+    if (value.length > 13) {
+      setValue('+593');
+    }
+  }, [value]);
+
+  useEffect(() => {
     if (value.length === 12 && acept && confirm) {
       setClasBtn(false);
     }

@@ -6,7 +6,7 @@ export const DashboardHistory = () => {
       <S.InfoPay>
         <div className="card border-0">
           <ul className="list-group list-group-flush">
-            <li className="list-group-item d-flex justify-content-between">
+            <li className="list-group-item d-flex justify-content-between mx-2">
               <div className="w-50">
                 <div>
                   <S.TextUlAmount>$100.50</S.TextUlAmount>
@@ -25,7 +25,7 @@ export const DashboardHistory = () => {
                 </div>
               </div>
             </li>
-            <li className="list-group-item d-flex justify-content-between">
+            <li className="list-group-item d-flex justify-content-between mx-2">
               <div className="w-50">
                 <div>
                   <S.TextUlAmount>$230.50</S.TextUlAmount>
@@ -44,7 +44,7 @@ export const DashboardHistory = () => {
                 </div>
               </div>
             </li>
-            <li className="list-group-item d-flex justify-content-between">
+            <li className="list-group-item d-flex justify-content-between mx-2">
               <div className="w-50">
                 <div>
                   <S.TextUlAmount>$195.00</S.TextUlAmount>
