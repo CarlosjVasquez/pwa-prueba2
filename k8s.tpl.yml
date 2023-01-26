@@ -15,11 +15,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: difierelo-front
+      lbtype: external
   template:
     metadata:
       labels:
-        app: difierelo-front
+        lbtype: external
+        app: difierelo-http
     spec:
       imagePullSecrets: # if using a private image
       - name: dockerhub-user
@@ -31,29 +32,30 @@ spec:
           value: "#{BRANCH}#"
         ports:
         - containerPort: 3000
+          name: "3080-port"
         #- containerPort: 443
 ---
 
 ##########################################
 #        Expose K8S Front Web App        #
 ##########################################
-apiVersion: v1
-kind: Service
-metadata:
-  name: difierelo-front-web
-  namespace: #{NAMESPACE}#
-spec:
-  selector:
-    app: difierelo-front
-  type: LoadBalancer
-  ports:
-  - name: http
-    port: 80
-    targetPort: 3000
-  - name: http-port
-    port: 4200
-    targetPort: 3000
-  # - name: https
-  #   port: 443
-  #   targetPort: 443
----
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: difierelo-front-web
+#   namespace: #{NAMESPACE}#
+# spec:
+#   selector:
+#     app: difierelo-front
+#   type: LoadBalancer
+#   ports:
+#   - name: http
+#     port: 80
+#     targetPort: 3000
+#   - name: http-port
+#     port: 4200
+#     targetPort: 3000
+#   # - name: https
+#   #   port: 443
+#   #   targetPort: 443
+# ---
