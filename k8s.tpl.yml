@@ -16,6 +16,7 @@ spec:
   selector:
     matchLabels:
       lbtype: external
+      app: difierelo-http
   template:
     metadata:
       labels:
