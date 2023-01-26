@@ -10,18 +10,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: difierelo-front
-  namespace: #{NAMESPACE}#
+  #namespace: #{NAMESPACE}#
+  labels:
+    app: difierelo-front
 spec:
   replicas: 1
   selector:
     matchLabels:
-      #lbtype: external
-      app: difierelo-http
+      lbtype: external
   template:
     metadata:
       labels:
         lbtype: external
-        app: difierelo-http
+        app: difierelo-front
     spec:
       imagePullSecrets: # if using a private image
       - name: dockerhub-user
