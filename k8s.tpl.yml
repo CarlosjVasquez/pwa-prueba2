@@ -34,8 +34,9 @@ spec:
           value: "#{BRANCH}#"
         ports:
         - containerPort: 3000
-        #  name: "3080-port"
-        #- containerPort: 443
+          name: "3082-port"
+        - containerPort: 443
+          name: "3081-port"
 ---
 
 
