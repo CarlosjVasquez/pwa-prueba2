@@ -17,12 +17,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      lbtype: external
-      app: external-lb-dev
+      lbtype: external-lb-dev
   template:
     metadata:
       labels:
-        lbtype: external
+        lbtype: external-lb-dev
         app: difierelo-front
     spec:
       imagePullSecrets: # if using a private image
