@@ -57,7 +57,7 @@ definitions:
       - chmod +x ./kubectl
       - mv ./kubectl /usr/local/bin/kubectl
       - export VERSION=$BITBUCKET_BRANCH-$BITBUCKET_BUILD_NUMBER
-      - export NAMESPACE=difierelo
+      - export NAMESPACE=development
       - export BRANCH=$BITBUCKET_BRANCH
       - sed  -e "s|#{NAMESPACE}#|$NAMESPACE|" -e "s|#{BRANCH}#|$BRANCH|" -e "s|#{DOCKER_USERNAME}#|$DOCKER_USERNAME|" -e "s|#{DOCKER_NAME}#|$DOCKER_NAME|" -e "s|#{VERSION}#|$VERSION|" k8s.tpl.yml > k8s.yml
       - echo $BRANCH $DOCKER_USERNAME $DOCKER_NAME $VERSION
@@ -79,7 +79,7 @@ definitions:
       - chmod +x ./kubectl
       - mv ./kubectl /usr/local/bin/kubectl
       - export VERSION=$BITBUCKET_BRANCH-$BITBUCKET_BUILD_NUMBER
-      - export NAMESPACE=difierelo-test
+      - export NAMESPACE=test
       - export BRANCH=$BITBUCKET_BRANCH
       - sed  -e "s|#{NAMESPACE}#|$NAMESPACE|" -e "s|#{BRANCH}#|$BRANCH|" -e "s|#{DOCKER_USERNAME}#|$DOCKER_USERNAME|" -e "s|#{DOCKER_NAME}#|$DOCKER_NAME|" -e "s|#{VERSION}#|$VERSION|" k8s.tpl.yml > k8s.yml
       - echo $BRANCH $DOCKER_USERNAME $DOCKER_NAME $VERSION
