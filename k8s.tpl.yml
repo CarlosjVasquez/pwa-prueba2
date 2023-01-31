@@ -17,12 +17,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      lbtype: external-lb-dev
+      app: external-lb-dev
   template:
     metadata:
       labels:
-        lbtype: external-lb-dev
-        app: difierelo-front
+        app: external-lb-dev
     spec:
       imagePullSecrets: # if using a private image
       - name: dockerhub-user
