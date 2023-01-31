@@ -12,7 +12,7 @@ metadata:
   name: difierelo-front
   #namespace: #{NAMESPACE}#
   labels:
-    app: difierelo-front
+   app: external-lb-dev
 spec:
   replicas: 1
   selector:
