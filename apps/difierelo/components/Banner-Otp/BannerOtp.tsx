@@ -186,6 +186,22 @@ export const BannerOtp = () => {
         <div className="d-flex">
           <div className="d-flex col-md-6">
             <S.BannerText>
+              {localStorage.getItem('login') === 'false' ? (
+                <img
+                  className="position-absolute"
+                  alt="Regresar"
+                  src="./icons/return.svg"
+                  onClick={() => router.push('/information')}
+                />
+              ) : (
+                <img
+                  className="position-absolute"
+                  alt="Regresar"
+                  src="./icons/return.svg"
+                  onClick={() => router.push('/login')}
+                />
+              )}
+
               <S.ImgDifierelo />
               <S.TextTitle>
                 <S.Title>Compra ahora y paga después</S.Title>

@@ -21,6 +21,7 @@ export const ImgDifierelo = styled.div`
   background-repeat: no-repeat;
   width: 10.55vw;
   min-height: 2.85vw;
+  margin-inline-start: 2vw;
 
   ${Responsive.SM} {
     width: 26.39vw;

@@ -168,3 +168,11 @@ export const TextAccount = styled.a`
     line-height: 3.82vw;
   }
 `;
+
+export const DivBack = styled.div`
+  display: none;
+
+  ${Responsive.SM} {
+    display: flex;
+  }
+`;
