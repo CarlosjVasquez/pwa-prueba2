@@ -8,6 +8,7 @@ export interface Input {
   value: string;
   handleChange: (e: any) => void;
   typeFormat?: string;
+  pattern?: string;
 }
 
 export const Input = (props: Input) => {
@@ -27,6 +28,7 @@ export const Input = (props: Input) => {
             (e.target.value = formatNumber(e.target.value));
           props.handleChange(e.target.value);
         }}
+        pattern={props.pattern}
       />
     </div>
   );

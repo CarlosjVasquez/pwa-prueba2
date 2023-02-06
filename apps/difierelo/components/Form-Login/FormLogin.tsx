@@ -48,6 +48,14 @@ export const FormLogin = () => {
     <>
       <div className="col-md-6 d-flex justify-content-center">
         <S.Container>
+          <S.DivBack>
+            <img
+              className="position-absolute pt-2"
+              alt="Regresar"
+              src="./icons/return.svg"
+              onClick={() => router.push('/')}
+            />
+          </S.DivBack>
           <S.DivTitle>
             <S.TextTitle>¡Es hora de empezar!</S.TextTitle>
           </S.DivTitle>

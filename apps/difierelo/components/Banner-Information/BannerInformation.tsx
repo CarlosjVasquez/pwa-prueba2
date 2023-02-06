@@ -52,7 +52,13 @@ const BannerInformation: React.FunctionComponent = () => {
     <>
       <S.Container className="row">
         <div className="d-flex">
-          <div className="col-md-6">
+          <div className="col-md-6 d-flex">
+            <img
+              className="position-absolute"
+              alt="Regresar"
+              src="./icons/return.svg"
+              onClick={() => router.push('/')}
+            />
             <S.BannerText>
               <S.ImgDifierelo
                 className="btn"

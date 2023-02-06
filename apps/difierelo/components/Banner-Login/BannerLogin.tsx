@@ -1,9 +1,18 @@
 import * as S from './BannerLogin.styles';
+import { useRouter } from 'next/router';
 
 export const BannerLogin = () => {
+  const router = useRouter();
+
   return (
     <S.Container className="col-md-6">
       <S.DivImg>
+        <img
+          className="position-absolute pt-2"
+          alt="Regresar"
+          src="./icons/return.svg"
+          onClick={() => router.push('/')}
+        />
         <S.ImgDifierelo />
       </S.DivImg>
       <S.DivTitle>

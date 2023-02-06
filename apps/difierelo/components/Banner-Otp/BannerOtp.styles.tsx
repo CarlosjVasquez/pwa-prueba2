@@ -50,10 +50,12 @@ export const ImgDifierelo = styled.div`
   background-repeat: no-repeat;
   width: 8.36vw;
   min-height: 1.46vw;
+  margin-inline-start: 2vw;
 
   ${Responsive.SM} {
     width: 25.59vw;
     min-height: 5.6vw;
+    margin-inline-start: 4.5vw;
   }
 `;
 

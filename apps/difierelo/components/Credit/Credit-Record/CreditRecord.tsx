@@ -31,6 +31,12 @@ export const CreditRecord = () => {
       <S.Container>
         <div className="d-flex">
           <S.BannerImage className="d-flex justify-content-between">
+            <img
+              className="position-absolute"
+              alt="Regresar"
+              src="../icons/return.svg"
+              onClick={() => router.back()}
+            />
             <S.ImgDifierelo />
             <div className="d-flex justify-content-end align-content-center">
               <a className="px-2">

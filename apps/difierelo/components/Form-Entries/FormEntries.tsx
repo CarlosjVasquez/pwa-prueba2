@@ -42,6 +42,7 @@ export const FormEntries = () => {
           value={entries}
           handleChange={setEntries}
           typeFormat="currency"
+          pattern="[0-9]*"
         />
         <Input
           type="text"
@@ -49,6 +50,7 @@ export const FormEntries = () => {
           value={expenses}
           handleChange={setExpenses}
           typeFormat="currency"
+          pattern="[0-9]*"
         />
       </S.ContainerInputs>
       <div className="d-flex pt-4">
@@ -64,6 +66,7 @@ export const FormEntries = () => {
           value={extra}
           handleChange={setExtra}
           typeFormat="currency"
+          pattern="[0-9]*"
         />
       </S.ContainerInputs>
       <S.ContainerInfo className="d-flex">
