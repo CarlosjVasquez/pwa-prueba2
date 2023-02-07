@@ -60,7 +60,7 @@ definitions:
       - export BRANCH=$BITBUCKET_BRANCH
       - export DOCKER_PUSH_URI=$DOCKER_USERNAME/$DOCKER_NAME_NGINX:$VERSION
       - export DOCKER_URI=$DOCKER_NAME_NGINX
-      - export PROXY="difierelo-nextjs-server.development.svc.cluster.local:4200"
+      - export PROXY="difierelo-nextjs-server.development.svc.cluster.local:3000"
       - echo $PROXY
       # Build the image
       - docker build --build-arg PROXY -f deployment/DockerfileNginx -t $DOCKER_URI .

@@ -8,7 +8,7 @@ services:
       args:
         ENVIRONMENT: develop
     ports:
-      - '4200:4200'
+      - '3000:3000'
 
     stdin_open: true
     restart: on-failure
@@ -21,7 +21,7 @@ services:
       context: .
       dockerfile: deployment/DockerfileNginx
       args:
-        PROXY: "bnpl-nextjs:4200"
+        PROXY: "bnpl-nextjs:3000"
     ports:
       - '3081:443'
       - '3080:80'
