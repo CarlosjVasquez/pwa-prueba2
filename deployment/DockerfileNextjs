@@ -1,0 +1,16 @@
+# ### STAGE 1: Build ###
+FROM node:16.17.1-alpine AS build
+ARG ENVIRONMENT
+ENV PORT=""
+RUN mkdir /app && chmod -R 777 /app
+WORKDIR /app
+COPY . .
+RUN rm -rf node_modules && rm -f package-lock.json
+RUN npm install --legacy-peer-deps
+RUN echo build:${ENVIRONMENT}
+RUN npm run build:${ENVIRONMENT}
+WORKDIR /app/dist/apps/digital-products-web
+RUN npm config set legacy-peer-deps true && npm cache clean --force
+RUN npm install typescript --save-dev && npm install
+EXPOSE 4200
+CMD ["npm", "start"]

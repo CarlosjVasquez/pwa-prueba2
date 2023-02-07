@@ -1,0 +1,17 @@
+### STAGE 2: Run ###
+FROM nginx:1.17.1-alpine AS base
+ARG PROXY
+
+# Override nginx base config
+COPY ./deployment/nginx/conf/nginx.tpl.conf /etc/nginx/nginx.tpl.conf
+
+# Replace a variable of proxy
+RUN sed -e "s|#{PROXY}#|$PROXY|" /etc/nginx/nginx.tpl.conf > /etc/nginx/nginx.conf \
+    && rm -f /etc/nginx/nginx.tpl.conf
+# Make path for certs and copy
+RUN mkdir -p /etc/nginx/certs
+COPY ./deployment/nginx/certs /etc/nginx/certs
+
+EXPOSE 80 443
+
+CMD ["nginx", "-g", "daemon off;"]

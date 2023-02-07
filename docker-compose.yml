@@ -1,26 +1,37 @@
 version: '3.4'
 services:
-  difierelo:
-    container_name: difierelo
+  bnpl-nextjs:
+    container_name: bnpl-nextjs
     build:
       context: .
-      dockerfile: deployment/Dockerfile
+      dockerfile: deployment/DockerfileNextjs
       args:
         ENVIRONMENT: develop
-    environment:
-      #NODE_ENV: production
-      ENVIRONMENT: develop
-      #volumes:
-      #- .:/app
-      #- /app/node_modules
     ports:
-      - '4200:3000'
-      - '443:443'
-      - '80:80'
+      - '4200:4200'
+
     stdin_open: true
     restart: on-failure
     networks:
       - dpw-network
+
+  bnpl-nginx:
+    container_name: digital-products-nginx
+    build:
+      context: .
+      dockerfile: deployment/DockerfileNginx
+      args:
+        PROXY: "bnpl-nextjs:4200"
+    ports:
+      - '3081:443'
+      - '3080:80'
+
+    stdin_open: true
+    restart: on-failure
+    networks:
+      - dpw-network
+    depends_on:
+      - bnpl-nextjs
 
 networks:
   dpw-network:

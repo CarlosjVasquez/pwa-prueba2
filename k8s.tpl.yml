@@ -1,57 +1,83 @@
-# Initial Steps:
-# To load all projects we need run:
-# - first time apply deployment/kubernetes/namespace-difierelo.yml
-# - finish apply the config this file k8s.yml
-
-#################################
-#      Front Web Deployment     #
-#################################
+####################################
+#      Front Nextjs Deployment     #
+####################################
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: difierelo-front
+  name: difierelo-nextjs
   namespace: #{NAMESPACE}#
-  labels:
-   app: external-lb-dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: external-lb-dev
+      app: difierelo-nextjs
   template:
     metadata:
       labels:
-        app: external-lb-dev
+        app: difierelo-nextjs
     spec:
       imagePullSecrets: # if using a private image
       - name: dockerhub-user
       containers:
-      - name: difierelo-front
-        image: #{DOCKER_USERNAME}#/#{DOCKER_NAME}#:#{VERSION}#
+      - name: difierelo-nextjs
+        image: #{DOCKER_USERNAME}#/#{DOCKER_NAME_NEXTJS}#:#{VERSION}#
         env:
         - name: "ENVIRONMENT"
           value: "#{BRANCH}#"
         ports:
-        - containerPort: 3000
+        - containerPort: 4200
+---
+
+###################################
+#      Front Nginx Deployment     #
+###################################
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: difierelo-nginx
+  namespace: #{NAMESPACE}#
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: #{LOADBALANCER}#
+  template:
+    metadata:
+      labels:
+        app: #{LOADBALANCER}#
+    spec:
+      imagePullSecrets: # if using a private image
+      - name: dockerhub-user
+      containers:
+      - name: difierelo-nginx
+        image: #{DOCKER_USERNAME}#/#{DOCKER_NAME_NGINX}#:#{VERSION}#
+        env:
+        - name: "ENVIRONMENT"
+          value: "#{BRANCH}#"
+        ports:
+        - containerPort: 80
           name: "3080-port"
         - containerPort: 443
           name: "3081-port"
 ---
 
-
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: difierelo-front
-#   labels:
-#     app: difierelo-front  
-# spec:
-#   selector:
-#     lbtype: external
-#   ports:
-#     - port: 3000
-#       nodePort: 32222
-#   type: NodePort
+#########################################
+#   Expose K8S Service for nextjs       #
+#########################################
+apiVersion: v1
+kind: Service
+metadata:
+ name: difierelo-nextjs-server
+ namespace: #{NAMESPACE}#
+spec:
+ selector:
+   app: difierelo-nextjs
+ type: ClusterIP
+ ports:
+   - name: http
+     port: 4200
+     targetPort: 4200    
+---
 
 ##########################################
 #        Expose K8S Front Web App        #
@@ -59,20 +85,17 @@ spec:
 # apiVersion: v1
 # kind: Service
 # metadata:
-#   name: difierelo-front-web
+#   name: productos-front-web
 #   namespace: #{NAMESPACE}#
 # spec:
 #   selector:
-#     app: difierelo-front
+#     app: productos-nginx
 #   type: LoadBalancer
 #   ports:
 #   - name: http
 #     port: 80
-#     targetPort: 3000
-#   - name: http-port
-#     port: 4200
-#     targetPort: 3000
-#   # - name: https
-#   #   port: 443
-#   #   targetPort: 443
-# ---
+#     targetPort: 80
+#   - name: https
+#     port: 443
+#     targetPort: 443
+---
