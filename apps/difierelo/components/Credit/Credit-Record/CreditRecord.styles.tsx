@@ -102,9 +102,9 @@ export const TextConditions = styled.p`
   text-align: justify;
 
   ${Responsive.SM} {
-    width: 70vw;
-    font-size: 2.26vw;
-    line-height: 2.78vw;
+    width: 100%;
+    font-size: 2.7vw;
+    line-height: 2.9vw;
     padding-left: 3.65vw;
   }
 `;
